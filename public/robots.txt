@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://markrumahorbo.com/sitemap.xml
+Sitemap: https://markkreel.github.io/sitemap.xml
