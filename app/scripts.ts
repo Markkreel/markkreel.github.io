@@ -12,9 +12,9 @@
 export function initNavigation() {
     if (typeof window === 'undefined') return;
     
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector<HTMLElement>('nav');
     const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
+    const sections = document.querySelectorAll<HTMLElement>('section[id]');
     
     if (!nav) return;
 
@@ -103,7 +103,7 @@ export function initSmoothScroll() {
             const target = href ? document.querySelector(href) : null;
             
             if (target) {
-                const nav = document.querySelector('nav');
+                const nav = document.querySelector<HTMLElement>('nav');
                 const navHeight = nav ? nav.offsetHeight : 0;
                 const targetPosition = (target as HTMLElement).offsetTop - navHeight;
                 
