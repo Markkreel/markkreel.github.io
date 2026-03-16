@@ -1,26 +1,931 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ===================================
+   MARK RUMAHORBO PORTFOLIO - STYLES
+   Swiss Avant Garde Design System
+   Migrated for Next.js
+   =================================== */
+
+/* -----------------------------------
+   BASE STYLES
+   ----------------------------------- */
+
+* {
+    /* UPDATED: Changed 'Geist' to 'Inter' for web-safe default. 
+       You can change this back to 'Geist' if you install the font via NPM. */
+    /* font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; */
+    font-family: var(--font-helvetica), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+    scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* -----------------------------------
+   CUSTOM SCROLLBAR
+   ----------------------------------- */
+
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* -----------------------------------
+   SELECTION STYLES
+   ----------------------------------- */
+
+::selection {
+    background: #930507;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #930507;
+    color: #fff;
+}
+
+/* -----------------------------------
+   GRID PATTERN BACKGROUND
+   ----------------------------------- */
+
+.grid-bg {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* -----------------------------------
+   ACCENT UNDERLINE ANIMATION
+   ----------------------------------- */
+
+.accent-line {
+    position: relative;
+}
+
+.accent-line::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #930507;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.accent-line:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* -----------------------------------
+   PROJECT CARD
+   ----------------------------------- */
+
+.project-card {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover {
+    border-color: #930507;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(147, 5, 7, 0.08);
+}
+
+/* -----------------------------------
+   TAG STYLE
+   ----------------------------------- */
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid #e5e5e5;
+    transition: all 0.2s ease;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.tag:hover {
+    border-color: #930507;
+    color: #930507;
+    background: rgba(147, 5, 7, 0.03);
+}
+
+/* -----------------------------------
+   SECTION NUMBER
+   ----------------------------------- */
+
+.section-number {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #930507;
+}
+
+.section-number-text {
+    display: inline-block;
+}
+
+.section-number-line {
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #930507;
+    animation: sectionLineExpand 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes sectionLineExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* -----------------------------------
+   DIVIDER
+   ----------------------------------- */
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background: #e5e5e5;
+}
+
+/* -----------------------------------
+   TIMELINE DOT
+   ----------------------------------- */
+
+.timeline-dot {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.timeline-dot-accent {
+    background: #930507;
+}
+
+/* -----------------------------------
+   NAVIGATION
+   ----------------------------------- */
+
+.nav-scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #930507;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* -----------------------------------
+   EDUCATION CARDS
+   ----------------------------------- */
+
+.edu-card {
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.edu-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.edu-card:hover {
+    border-color: #930507;
+    box-shadow: 0 4px 20px rgba(147, 5, 7, 0.08);
+}
+
+/* -----------------------------------
+   CONTACT CARDS
+   ----------------------------------- */
+
+.contact-card {
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: #930507;
+    transform: translateX(4px);
+}
+
+/* -----------------------------------
+   SCROLL REVEAL ANIMATIONS
+   ----------------------------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease;
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.6s ease;
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Staggered animations */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* -----------------------------------
+   HERO ANIMATIONS
+   ----------------------------------- */
+
+.hero-title {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.hero-line {
+    animation: expandWidth 0.6s ease 0.4s forwards;
+    width: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 64px;
+    }
+}
+
+/* -----------------------------------
+   SCROLL INDICATOR
+   ----------------------------------- */
+
+.scroll-indicator {
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+    opacity: 0;
+}
+
+/* -----------------------------------
+   STATUS DOT - Heartbeat with Echo
+   ----------------------------------- */
+
+.status-dot {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+}
+
+/* Core dot - the beating heart */
+.status-dot-core {
+    width: 8px;
+    height: 8px;
+    background: #930507;
+    border-radius: 50%;
+    z-index: 2;
+    position: relative;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Echo/shock that ripples out */
+.status-dot-pulse {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #930507;
+    border-radius: 50%;
+    z-index: 1;
+    animation: echo 1.5s ease-out infinite;
+}
+
+/* Ring echo */
+.status-dot-ring {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: transparent;
+    border: 1.5px solid #930507;
+    border-radius: 50%;
+    z-index: 1;
+    animation: echo 1.5s ease-out infinite;
+    animation-delay: 0.15s;
+}
+
+/* Heartbeat animation - dot pulses */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.2);
+    }
+    30% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.15);
+    }
+    60% {
+        transform: scale(1);
+    }
+}
+
+/* Echo animation - fades out as it expands */
+@keyframes echo {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Alternative: Simple pulsing dot */
+.pulse-dot {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* -----------------------------------
+   BUTTON STYLES
+   ----------------------------------- */
+
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #930507;
+    transition: left 0.3s ease;
+    z-index: 0;
+}
+
+.btn-primary:hover::before {
+    left: 0;
+}
+
+.btn-primary span {
+    position: relative;
+    z-index: 1;
+}
+
+/* -----------------------------------
+   MOBILE MENU
+   ----------------------------------- */
+
+.mobile-menu {
+    position: fixed !important;
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: calc(100vh - 64px) !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 45 !important;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.hamburger-line {
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* -----------------------------------
+   RESPONSIVE ADJUSTMENTS
+   ----------------------------------- */
+
+/* Extra Large Screens (1440px+) */
+@media (min-width: 1440px) {
+    .max-w-6xl {
+        max-width: 72rem !important;
+    }
+    
+    .hero-section {
+        min-height: 90vh;
+    }
+    
+    .grid-bg {
+        background-size: 60px 60px;
+    }
+}
+
+/* Large Screens (1280px - 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .hero-section h1 {
+        font-size: 5rem;
+        line-height: 1;
+    }
+}
+
+/* Tablet Landscape (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .max-w-6xl {
+        max-width: 90%;
+    }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    .project-card .md\:col-span-3 {
+        margin-bottom: 1rem;
+    }
+    
+    .edu-card {
+        padding: 1.5rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    
+    .contact-card {
+        padding: 0.875rem 1rem;
+    }
+}
+
+/* Mobile Landscape & Small Tablet (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .project-card {
+        padding: 1.25rem;
+    }
+}
+
+/* Mobile Portrait (< 640px) */
+@media (max-width: 639px) {
+    /* Hero adjustments */
+    .hero-section {
+        min-height: auto;
+        padding-top: 5rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .hero-line {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Section adjustments */
+    .section-number {
+        font-size: 10px;
+    }
+    
+    section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    /* Project cards */
+    .project-card {
+        padding: 1.25rem;
+    }
+    
+    .project-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .project-card:hover {
+        transform: none;
+    }
+    
+    /* Tags */
+    .tag {
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+    
+    /* Education cards */
+    .edu-card {
+        padding: 1.25rem;
+    }
+    
+    /* Contact section */
+    .contact-card {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Extra Small Screens (320px - 374px) */
+@media (max-width: 374px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    section h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .project-card h3 {
+        font-size: 1rem;
+    }
+    
+    .tag {
+        font-size: 8px;
+        padding: 2px 6px;
+    }
+    
+    .mobile-menu a {
+        font-size: 1.125rem;
+    }
+    
+    /* Stack nav buttons on mobile */
+    nav .btn-primary,
+    nav a[href*="Resume"] {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+    
+    .status-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .status-dot-core {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* General Mobile Adjustments (< 768px) */
+@media (max-width: 768px) {
+    /* Disable hover transforms on touch devices */
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .edu-card:hover {
+        transform: none;
+    }
+    
+    .contact-card:hover {
+        transform: none;
+    }
+    
+    /* Better touch targets */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Mobile menu adjustments */
+    .mobile-menu a {
+        padding: 0.75rem 0;
+        display: block;
+    }
+    
+    /* Scroll indicator */
+    .scroll-indicator {
+        display: none;
+    }
+    
+    /* Hero scroll indicator hidden on mobile */
+    .scroll-indicator {
+        margin-top: 3rem;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding: 6rem 0 4rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .project-card:hover {
+        border-color: transparent;
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .tag:hover {
+        border-color: #e5e5e5;
+        color: inherit;
+        background: transparent;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+}
+
+/* High DPI / Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .grid-bg {
+        background-image: 
+            linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+    }
+}
+
+/* Print styles */
+@media print {
+    .back-to-top,
+    .mobile-menu,
+    .hamburger,
+    nav {
+        display: none !important;
+    }
+    
+    .hero-section,
+    section {
+        page-break-inside: avoid;
+    }
+    
+    .project-card,
+    .edu-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+/* -----------------------------------
+   REDUCED MOTION
+   ----------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* -----------------------------------
+   BACK TO TOP BUTTON
+   ----------------------------------- */
+
+.back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 9999; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #930507;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(147, 5, 7, 0.3);
+}
+
+.back-to-top:active {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 24px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* -----------------------------------
+   ACCENT LINE (for inline links)
+   ----------------------------------- */
+
+.accent-line {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #000;
+    transition: color 0.2s ease;
+}
+
+.accent-line::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #930507;
+    transition: width 0.3s ease;
+}
+
+.accent-line:hover::after {
+    width: 100%;
+}
+
+.accent-line:hover {
+    color: #930507;
+}
+
+/* -----------------------------------
+   SECTION NUMBER ANIMATED UNDERLINE
+   ----------------------------------- */
+
+.section-number-text {
+    display: inline-block;
+}
+
+.section-number-line {
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #930507;
+    animation: sectionLineExpand 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.section-number .section-number-line {
+    max-width: 60px;
+}
+
+@keyframes sectionLineExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
