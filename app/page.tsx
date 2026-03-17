@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react"; // Add this import
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 // Helper SVG Components (Keep these as they are clean)
 const LinkedInIcon = () => (
@@ -63,14 +64,56 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Mark Rumahorbo",
+    jobTitle: "Digital Transformation Consultant",
+    url: "https://markrumahorbo.com",
+    sameAs: [
+      "https://linkedin.com/in/mark-rumahorbo",
+      "https://github.com/Markkreel",
+    ],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Universitas Gadjah Mada",
+    },
+    worksFor: {
+      "@type": "Organization",
+      name: "PwC South East Asia Consulting",
+    },
+    description:
+      "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
+    knowsAbout: [
+      "Digital Transformation",
+      "Salesforce Sales Cloud",
+      "Salesforce Marketing Cloud",
+      "Business Process Reengineering",
+      "APQC",
+      "Strategy Consulting",
+      "Data Architecture",
+    ],
+  };
+
   return (
     // NOTICE: No <body> tag here, just the content
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-black/5 transition-all duration-300">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#" className="flex items-center">
-            <img src="/favicon.svg" alt="Mark Rumahorbo" className="h-8 w-8" />
+            <Image
+              src="/favicon.svg"
+              alt="Mark Rumahorbo Logo"
+              width={32}
+              height={32}
+              className="h-8 w-8"
+              priority
+            />
           </a>
           <div className="hidden md:flex items-center gap-8">
             <a
@@ -170,779 +213,806 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="hero-section min-h-screen grid-bg flex items-center pt-36">
-        <div className="max-w-6xl mx-auto px-6 py-20 w-full">
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12">
-            {/* Left Column */}
-            <div className="md:col-span-7">
-              <p className="section-number mb-6 hero-title">
-                <span className="section-number-text">01 — INTRODUCTION</span>
-                <span className="section-number-line"></span>
-              </p>
-              <h1 className="hero-title text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.95] mb-6">
-                Mark
-                <br />
-                <span className="text-gray-400">Rumahorbo</span>
-              </h1>
-              <div className="hero-line h-0.5 bg-accent mb-8"></div>
-              <p className="hero-subtitle text-xl md:text-2xl font-light text-gray-600 leading-relaxed max-w-xl">
-                Digital transformation and business process analyst delivering
-                <span className="text-black font-medium">
-                  {" strategic solutions "}
-                </span>
-                for banks and insurers across Southeast Asia.
-              </p>
-            </div>
+      <main>
+        {/* Hero Section */}
+        <section className="hero-section min-h-[85vh] grid-bg flex items-start pt-16 md:items-center md:pt-0">
+          <div className="max-w-6xl mx-auto px-6 py-10 md:py-20 w-full">
+            <div className="grid md:grid-cols-12 gap-8 md:gap-12">
+              {/* Left Column */}
+              <div className="md:col-span-7">
+                <p className="section-number mb-6 hero-title">
+                  <span className="section-number-text">01 — INTRODUCTION</span>
+                  <span className="section-number-line"></span>
+                </p>
+                <h1 className="hero-title text-[3.5rem] md:text-7xl font-semibold tracking-tighter leading-[0.9] mb-4">
+                  Mark
+                  <br className="md:hidden" />
+                  <span className="text-gray-400"> Rumahorbo</span>
+                </h1>
+                <div className="hero-line h-0.5 bg-accent mb-8"></div>
+                <p className="hero-subtitle text-xl md:text-2xl font-light text-gray-600 leading-relaxed max-w-xl">
+                  Digital transformation and business process analyst delivering
+                  <span className="text-black font-medium">
+                    {" strategic solutions "}
+                  </span>
+                  for banks and insurers across Southeast Asia.
+                </p>
+              </div>
 
-            {/* Right Column */}
-            <div className="md:col-span-5 md:border-l md:border-black/10 md:pl-12 reveal-right">
-              <div className="space-y-6">
-                <div>
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
-                    Location
-                  </p>
-                  <p className="text-lg">Jakarta, Indonesia</p>
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
-                    Current Status
-                  </p>
-                  <p className="text-lg">Open to Opportunities</p>
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
-                    Recent Role
-                  </p>
-                  <p className="text-lg text-gray-600">
-                    Associate Consultant (Contract-Based), <br /> PwC South East
-                    Asia
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
-                    Focus Areas
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    <span className="tag">Digital Transformation</span>
-                    <span className="tag">Salesforce</span>
-                    <span className="tag">Process Reengineering</span>
-                    <span className="tag">Strategy</span>
-                    <span className="tag">Market Intelligence</span>
+              {/* Right Column */}
+              <div className="md:col-span-5 md:border-l md:border-black/10 md:pl-12 reveal-right">
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
+                      Location
+                    </p>
+                    <p className="text-lg">Jakarta, Indonesia</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
+                      Current Status
+                    </p>
+                    <p className="text-lg">Open to Opportunities</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
+                      Recent Role
+                    </p>
+                    <p className="text-lg text-gray-600">
+                      Associate Consultant (Contract-Based), <br /> PwC South
+                      East Asia
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
+                      Focus Areas
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="tag">Digital Transformation</span>
+                      <span className="tag">Salesforce</span>
+                      <span className="tag">Process Reengineering</span>
+                      <span className="tag">Strategy</span>
+                      <span className="tag">Market Intelligence</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Scroll indicator */}
-          <div
-            className={`
+            {/* Scroll indicator */}
+            <div
+              className={`
         scroll-indicator mt-20 flex items-center gap-4 text-gray-400
         transition-opacity duration-500
         ${isScrolled ? "opacity-0" : "opacity-100"}
       `}
-          >
-            <div className="w-8 h-12 border border-gray-300 rounded-full flex justify-center pt-2">
-              <div className="w-1 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+            >
+              <div className="w-8 h-12 border border-gray-300 rounded-full flex justify-center pt-2">
+                <div className="w-1 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+              </div>
+              <span className="text-sm">Scroll to explore</span>
             </div>
-            <span className="text-sm">Scroll to explore</span>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 border-t border-black/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12">
-            <div className="md:col-span-4 reveal-left">
+        {/* About Section */}
+        <section
+          id="about"
+          className="py-24 border-t border-black/5 bg-white relative z-10"
+        >
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-12 gap-8 md:gap-12">
+              <div className="md:col-span-4 reveal-left">
+                <p className="section-number mb-4">
+                  <span className="section-number-text">02 — ABOUT</span>
+                  <span className="section-number-line"></span>
+                </p>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                  Professional Profile
+                </h2>
+              </div>
+              <div className="md:col-span-8 md:border-l md:border-black/10 md:pl-12 reveal-right">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 text-accent text-sm font-medium mb-6">
+                  <span className="status-dot">
+                    <span className="status-dot-core"></span>
+                    <span className="status-dot-pulse"></span>
+                    <span className="status-dot-ring"></span>
+                  </span>
+                  Available for full-time opportunities
+                </div>
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  Digital transformation and business process analyst with
+                  Computer Science foundation and consulting experience at
+                  <span className="text-black font-medium">
+                    {" PwC South East Asia. "}
+                  </span>
+                  Delivered workstreams across Salesforce implementation
+                  planning, enterprise business process reengineering, operating
+                  model design, and market intelligence for banks and insurers.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  Strong in as-is/to-be process mapping, workflow analysis,
+                  data/integration mapping, requirements traceability,
+                  transformation roadmapping, and executive storylining;
+                  experienced in stakeholder workshops and presenting
+                  recommendations to Partners and client VPs/Directors.
+                </p>
+                <a
+                  href="https://linkedin.com/in/mark-rumahorbo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium accent-line"
+                >
+                  <LinkedInIcon />
+                  View LinkedIn Profile
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section
+          id="projects"
+          className="py-24 bg-gray-50 border-t border-black/5"
+        >
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-16 reveal">
               <p className="section-number mb-4">
-                <span className="section-number-text">02 — ABOUT</span>
-                <span className="section-number-line"></span>
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-                Professional Profile
-              </h2>
-            </div>
-            <div className="md:col-span-8 md:border-l md:border-black/10 md:pl-12 reveal-right">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 text-accent text-sm font-medium mb-6">
-                <span className="status-dot">
-                  <span className="status-dot-core"></span>
-                  <span className="status-dot-pulse"></span>
-                  <span className="status-dot-ring"></span>
-                </span>
-                Available for full-time opportunities
-              </div>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Digital transformation and business process analyst with
-                Computer Science foundation and consulting experience at
-                <span className="text-black font-medium">
-                  {" PwC South East Asia. "}
-                </span>
-                Delivered workstreams across Salesforce implementation planning,
-                enterprise business process reengineering, operating model
-                design, and market intelligence for banks and insurers.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Strong in as-is/to-be process mapping, workflow analysis,
-                data/integration mapping, requirements traceability,
-                transformation roadmapping, and executive storylining;
-                experienced in stakeholder workshops and presenting
-                recommendations to Partners and client VPs/Directors.
-              </p>
-              <a
-                href="https://linkedin.com/in/mark-rumahorbo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium accent-line"
-              >
-                <LinkedInIcon />
-                View LinkedIn Profile
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="py-24 bg-gray-50 border-t border-black/5"
-      >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-16 reveal">
-            <p className="section-number mb-4">
-              <span className="section-number-text">
-                03 — PROJECTS / EXPERIENCES
-              </span>
-              <span className="section-number-line"></span>
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              Consulting Experience
-            </h2>
-            <p className="text-gray-600 mt-4 max-w-xl">
-              Strategic consulting projects delivered at PwC South East Asia and
-              independent engagements.
-            </p>
-          </div>
-
-          {/* PwC Section Header */}
-          <div className="flex items-center gap-4 mb-6 pb-4 border-b border-black/10 reveal">
-            <div className="w-14 h-14 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center">
-              <img src="/pwc_logo.svg" alt="PwC" className="h-10 md:h-8" />
-            </div>
-            <div>
-              <h3 className="font-semibold">PwC South East Asia Consulting</h3>
-              <p className="text-sm text-gray-500">
-                Associate Consultant (Contract-Based), Financial Services
-                Strategy & Operations
-              </p>
-            </div>
-          </div>
-
-          {/* PwC Project Cards */}
-          <div className="space-y-6 mb-12">
-            {/* Project 1 */}
-            <div className="project-card bg-white p-8 stagger-3">
-              <div className="grid md:grid-cols-12 gap-6">
-                <div className="md:col-span-3">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="timeline-dot timeline-dot-accent"></div>
-                    <span className="text-sm text-gray-500">
-                      December 2025 – February 2026
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    Life Insurance Market Intelligence
-                  </h3>
-                  <p className="text-accent font-medium text-sm">
-                    Market Research
-                  </p>
-                </div>
-                <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
-                  <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <span className="tag">Insurance</span>
-                    <span className="tag">Sharia Life Insurance</span>
-                    <span className="tag">Multinational</span>
-                  </div>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Built a benchmarking approach using GWP-to-GDP metrics
-                        to compare Family Takaful penetration across Southeast
-                        Asia, the Middle East, and South Asia; benchmarked 10+
-                        competitors and 30+ products.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Consolidated 5 years of macroeconomic indicators and
-                        competitor financials into executive-ready deliverables
-                        across 3 regions.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Acting PMO Support: Supported workplan tracking, weekly
-                        reporting, and alignment across workstreams during
-                        leadership transition.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="project-card bg-white p-8 stagger-2">
-              <div className="grid md:grid-cols-12 gap-6">
-                <div className="md:col-span-3">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="timeline-dot timeline-dot-accent"></div>
-                    <span className="text-sm text-gray-500">
-                      August 2025 – December 2025
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    Enterprise Business Process Reengineering
-                  </h3>
-                  <p className="text-accent font-medium text-sm">
-                    BPR Initiative
-                  </p>
-                </div>
-                <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
-                  <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <span className="tag">Shipping & Logistics</span>
-                    <span className="tag">7 Entities</span>
-                    <span className="tag">State-Owned Group</span>
-                  </div>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Led APQC-aligned as-is process mapping and redesigned
-                        130+ to-be processes across Procurement, Core Business,
-                        Finance, and QHSSE for a holding company and 6
-                        subsidiaries.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Participated in ~20 stakeholder interviews/workshops to
-                        validate process bottlenecks, control gaps, and
-                        standardization opportunities.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Built sections of the executive deck and developed 30+
-                        organizational design recommendations and 100+ KPM
-                        metrics; presented to PwC Partner and client
-                        VPs/Directors.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="project-card bg-white p-8 stagger-1">
-              <div className="grid md:grid-cols-12 gap-6">
-                <div className="md:col-span-3">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="timeline-dot timeline-dot-accent"></div>
-                    <span className="text-sm text-gray-500">
-                      May 2025 – August 2025
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    Sales & Marketing Transformation
-                  </h3>
-                  <p className="text-accent font-medium text-sm">
-                    Salesforce Implementation
-                  </p>
-                </div>
-                <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
-                  <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <span className="tag">Financial Services</span>
-                    <span className="tag">State-Owned Bank</span>
-                    <span className="tag">Data Architecture</span>
-                  </div>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Owned Tech & Data analysis for Salesforce Sales Cloud
-                        and Marketing Cloud, producing Data Architecture Model,
-                        Application Interaction Model, and Data Flow Diagrams
-                        across 50+ system integrations.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Built current-to-target mapping for 100+ data fields and
-                        system touchpoints; translated business needs into
-                        functional and data requirements.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Co-developed a 3-phase implementation roadmap, ToR, and
-                        vendor scoring model to support System Integrator
-                        selection.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Naga Cybersecurity Section Header */}
-          <div className="flex items-center gap-4 mb-6 pb-4 border-b border-black/10 reveal">
-            <div className="w-14 h-14 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center">
-              <img src="/ncs_logo.webp" alt="PwC" className="h-10 md:h-8" />
-            </div>
-            <div>
-              <h3 className="font-semibold">Naga Cybersecurity</h3>
-              <p className="text-sm text-gray-500">Cybersecurity Intern</p>
-            </div>
-          </div>
-
-          {/* Project 4 */}
-          <div className="space-y-6 mb-12">
-            <div className="project-card bg-white p-8 stagger-5">
-              <div className="grid md:grid-cols-12 gap-6">
-                <div className="md:col-span-3">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="timeline-dot timeline-dot-accent"></div>
-                    <span className="text-sm text-gray-500">
-                      Aug 2021 – Jan 2022
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    NIST-Based Security Assessment
-                  </h3>
-                  <p className="text-accent font-medium text-sm">
-                    Threat Analysis
-                  </p>
-                </div>
-                <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
-                  <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <span className="tag">Cybersecurity</span>
-                    <span className="tag">NIST Framework</span>
-                    <span className="tag">Endpoint Detection and Response</span>
-                  </div>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Monitored daily endpoint security alerts using Trellix
-                        EDR, supporting senior analysts by documenting initial
-                        triage and gathering data on potential security events.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Assisted with security policy reviews and documentation,
-                        utilizing NIST-aligned security controls to help
-                        evaluate and improve client security postures.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Collaborated with the consulting team in a fast-paced
-                        cryptosecurity startup, helping to translate technical
-                        endpoint findings into actionable reports for digital
-                        asset clients.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Other Experience Header */}
-          <div className="flex items-center gap-4 mb-6 pb-4 border-b border-black/10 reveal">
-            <div className="w-14 h-14 md:w-12 md:h-12 flex-shrink-0 bg-black flex items-center justify-center">
-              <span className="text-white font-bold text-base">EXP</span>
-            </div>
-            <div>
-              <h3 className="font-semibold">Other Experience</h3>
-              <p className="text-sm text-gray-500">
-                Independent and early career roles
-              </p>
-            </div>
-          </div>
-
-          {/* Other Experience Cards */}
-          <div className="space-y-6">
-            {/* Project 5 */}
-            <div className="project-card bg-white p-8 stagger-4">
-              <div className="grid md:grid-cols-12 gap-6">
-                <div className="md:col-span-3">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="timeline-dot"></div>
-                    <span className="text-sm text-gray-500">
-                      Jul 2024 – Apr 2025
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    Business Operations & Analytics
-                  </h3>
-                  <p className="text-gray-600 font-medium text-sm">
-                    Family Business
-                  </p>
-                </div>
-                <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
-                  <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <span className="tag">Agribusiness</span>
-                    <span className="tag">Retail</span>
-                    <span className="tag">Interim Role</span>
-                  </div>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Established daily Excel-based tracking for egg
-                        production, flock age, sales, and operating
-                        costs—improving visibility of day-to-day operations.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></span>
-                      <span>
-                        Conducted practical feasibility assessment for expansion
-                        (farm-adjacent restaurant concept) and supported basic
-                        digitization for a second farm business.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section id="education" className="py-24 border-t border-black/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-16 reveal">
-            <p className="section-number mb-4">
-              <span className="section-number-text">04 — EDUCATION</span>
-              <span className="section-number-line"></span>
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              Academic Background
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Education 1 */}
-            <div className="edu-card p-8 border border-black/10 hover:border-accent transition-colors stagger-1">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    Bachelor of Computer Science
-                  </h3>
-                  <p className="text-accent font-medium">
-                    Universitas Gadjah Mada
-                  </p>
-                </div>
-                <span className="text-sm text-gray-500">
-                  Sep 2020 – Jul 2024
-                </span>
-              </div>
-              <p className="text-gray-600 mb-4">Yogyakarta, Indonesia</p>
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-sm font-medium px-3 py-1 bg-gray-100">
-                  GPA: 3.59/4.00
-                </span>
-              </div>
-              <p className="text-sm text-gray-500">
-                <span className="font-medium text-black">Thesis:</span> Binary
-                Static Analysis Through Instruction and Operand Extraction and
-                Agglomerative Hierarchical Clustering (AHC)
-              </p>
-            </div>
-
-            {/* Education 2 */}
-            <div className="edu-card p-8 border border-black/10 hover:border-accent transition-colors stagger-2">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    Exchange Semester
-                  </h3>
-                  <p className="text-accent font-medium">Universität Leipzig</p>
-                </div>
-                <span className="text-sm text-gray-500">
-                  Apr 2023 – Sep 2023
-                </span>
-              </div>
-              <p className="text-gray-600 mb-4">Leipzig, Germany</p>
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-sm font-medium px-3 py-1 bg-accent text-white">
-                  DAAD Scholar
-                </span>
-                <span className="text-sm font-medium px-3 py-1 bg-gray-100">
-                  Digital Humanities
-                </span>
-              </div>
-              <p className="text-sm text-gray-500">
-                German Academic Exchange Service (DAAD) scholarship recipient
-                for international exchange program.
-              </p>
-            </div>
-
-            {/* Education 3 */}
-            <div className="edu-card p-8 border border-black/10 hover:border-accent transition-colors stagger-1">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">
-                    International Baccalaureate Diploma
-                  </h3>
-                  <p className="text-accent font-medium">
-                    Yogyakarta Independent School
-                  </p>
-                </div>
-                <span className="text-sm text-gray-500">Jul 2020</span>
-              </div>
-              <p className="text-gray-600 mb-4">Yogyakarta, Indonesia</p>
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-sm font-medium px-3 py-1 bg-gray-100">
-                  Grade: 30/45
-                </span>
-              </div>
-              <p className="text-sm text-gray-500">
-                <span className="font-medium text-black">
-                  High-Level Subjects:
-                </span>{" "}
-                Design Technology, English, Environmental Systems and Societies
-              </p>
-              <p className="text-sm text-gray-500">
-                <span className="font-medium text-black">
-                  Member of Student Council Committee
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Section */}
-      <section className="py-24 bg-black text-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12">
-            <div className="md:col-span-4 reveal-left">
-              <p className="section-number mb-4">
-                <span className="section-number-text text-accent">
-                  05 — LEADERSHIP
+                <span className="section-number-text">
+                  03 — PROJECTS / EXPERIENCES
                 </span>
                 <span className="section-number-line"></span>
               </p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-                Activities
+                Consulting Experience
+              </h2>
+              <p className="text-gray-600 mt-4 max-w-xl">
+                Strategic consulting projects delivered at PwC South East Asia
+                and independent engagements.
+              </p>
+            </div>
+
+            {/* PwC Section Header */}
+            <div className="flex items-center gap-4 mb-6 pb-4 border-b border-black/10 reveal">
+              <div className="w-14 h-14 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center">
+                <Image
+                  src="/pwc_logo.svg"
+                  alt="PwC Consulting Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 md:h-8 object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="font-semibold">
+                  PwC South East Asia Consulting
+                </h3>
+                <p className="text-sm text-gray-500">
+                  Associate Consultant (Contract-Based), Financial Services
+                  Strategy & Operations
+                </p>
+              </div>
+            </div>
+
+            {/* PwC Project Cards */}
+            <div className="space-y-6 mb-12">
+              {/* Project 1 */}
+              <div className="project-card bg-white p-8 stagger-3">
+                <div className="grid md:grid-cols-12 gap-6">
+                  <div className="md:col-span-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="timeline-dot timeline-dot-accent"></div>
+                      <span className="text-sm text-gray-500">
+                        December 2025 – February 2026
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      Life Insurance Market Intelligence
+                    </h3>
+                    <p className="text-accent font-medium text-sm">
+                      Market Research
+                    </p>
+                  </div>
+                  <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
+                    <div className="flex flex-wrap items-center gap-2 mb-4">
+                      <span className="tag">Insurance</span>
+                      <span className="tag">Sharia Life Insurance</span>
+                      <span className="tag">Multinational</span>
+                    </div>
+                    <ul className="space-y-3 text-gray-600">
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Built a benchmarking approach using GWP-to-GDP metrics
+                          to compare Family Takaful penetration across Southeast
+                          Asia, the Middle East, and South Asia; benchmarked 10+
+                          competitors and 30+ products.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Consolidated 5 years of macroeconomic indicators and
+                          competitor financials into executive-ready
+                          deliverables across 3 regions.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Acting PMO Support: Supported workplan tracking,
+                          weekly reporting, and alignment across workstreams
+                          during leadership transition.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 2 */}
+              <div className="project-card bg-white p-8 stagger-2">
+                <div className="grid md:grid-cols-12 gap-6">
+                  <div className="md:col-span-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="timeline-dot timeline-dot-accent"></div>
+                      <span className="text-sm text-gray-500">
+                        August 2025 – December 2025
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      Enterprise Business Process Reengineering
+                    </h3>
+                    <p className="text-accent font-medium text-sm">
+                      BPR Initiative
+                    </p>
+                  </div>
+                  <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
+                    <div className="flex flex-wrap items-center gap-2 mb-4">
+                      <span className="tag">Shipping & Logistics</span>
+                      <span className="tag">7 Entities</span>
+                      <span className="tag">State-Owned Group</span>
+                    </div>
+                    <ul className="space-y-3 text-gray-600">
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Led APQC-aligned as-is process mapping and redesigned
+                          130+ to-be processes across Procurement, Core
+                          Business, Finance, and QHSSE for a holding company and
+                          6 subsidiaries.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Participated in ~20 stakeholder interviews/workshops
+                          to validate process bottlenecks, control gaps, and
+                          standardization opportunities.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Built sections of the executive deck and developed 30+
+                          organizational design recommendations and 100+ KPM
+                          metrics; presented to PwC Partner and client
+                          VPs/Directors.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 3 */}
+              <div className="project-card bg-white p-8 stagger-1">
+                <div className="grid md:grid-cols-12 gap-6">
+                  <div className="md:col-span-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="timeline-dot timeline-dot-accent"></div>
+                      <span className="text-sm text-gray-500">
+                        May 2025 – August 2025
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      Sales & Marketing Transformation
+                    </h3>
+                    <p className="text-accent font-medium text-sm">
+                      Salesforce Implementation
+                    </p>
+                  </div>
+                  <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
+                    <div className="flex flex-wrap items-center gap-2 mb-4">
+                      <span className="tag">Financial Services</span>
+                      <span className="tag">State-Owned Bank</span>
+                      <span className="tag">Data Architecture</span>
+                    </div>
+                    <ul className="space-y-3 text-gray-600">
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Owned Tech & Data analysis for Salesforce Sales Cloud
+                          and Marketing Cloud, producing Data Architecture
+                          Model, Application Interaction Model, and Data Flow
+                          Diagrams across 50+ system integrations.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Built current-to-target mapping for 100+ data fields
+                          and system touchpoints; translated business needs into
+                          functional and data requirements.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Co-developed a 3-phase implementation roadmap, ToR,
+                          and vendor scoring model to support System Integrator
+                          selection.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Naga Cybersecurity Section Header */}
+            <div className="flex items-center gap-4 mb-6 pb-4 border-b border-black/10 reveal">
+              <div className="w-14 h-14 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center">
+                <Image
+                  src="/ncs_logo.webp"
+                  alt="Naga Cybersecurity Logo"
+                  width={40}
+                  height={40}
+                  className="h-10 md:h-8 object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="font-semibold">Naga Cybersecurity</h3>
+                <p className="text-sm text-gray-500">Cybersecurity Intern</p>
+              </div>
+            </div>
+
+            {/* Project 4 */}
+            <div className="space-y-6 mb-12">
+              <div className="project-card bg-white p-8 stagger-5">
+                <div className="grid md:grid-cols-12 gap-6">
+                  <div className="md:col-span-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="timeline-dot timeline-dot-accent"></div>
+                      <span className="text-sm text-gray-500">
+                        Aug 2021 – Jan 2022
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      NIST-Based Security Assessment
+                    </h3>
+                    <p className="text-accent font-medium text-sm">
+                      Threat Analysis
+                    </p>
+                  </div>
+                  <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
+                    <div className="flex flex-wrap items-center gap-2 mb-4">
+                      <span className="tag">Cybersecurity</span>
+                      <span className="tag">NIST Framework</span>
+                      <span className="tag">
+                        Endpoint Detection and Response
+                      </span>
+                    </div>
+                    <ul className="space-y-3 text-gray-600">
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Monitored daily endpoint security alerts using Trellix
+                          EDR, supporting senior analysts by documenting initial
+                          triage and gathering data on potential security
+                          events.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Assisted with security policy reviews and
+                          documentation, utilizing NIST-aligned security
+                          controls to help evaluate and improve client security
+                          postures.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Collaborated with the consulting team in a fast-paced
+                          cryptosecurity startup, helping to translate technical
+                          endpoint findings into actionable reports for digital
+                          asset clients.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Other Experience Header */}
+            <div className="flex items-center gap-4 mb-6 pb-4 border-b border-black/10 reveal">
+              <div className="w-14 h-14 md:w-12 md:h-12 flex-shrink-0 bg-black flex items-center justify-center">
+                <span className="text-white font-bold text-base">EXP</span>
+              </div>
+              <div>
+                <h3 className="font-semibold">Other Experience</h3>
+                <p className="text-sm text-gray-500">
+                  Independent and early career roles
+                </p>
+              </div>
+            </div>
+
+            {/* Other Experience Cards */}
+            <div className="space-y-6">
+              {/* Project 5 */}
+              <div className="project-card bg-white p-8 stagger-4">
+                <div className="grid md:grid-cols-12 gap-6">
+                  <div className="md:col-span-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="timeline-dot"></div>
+                      <span className="text-sm text-gray-500">
+                        Jul 2024 – Apr 2025
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      Business Operations & Analytics
+                    </h3>
+                    <p className="text-gray-600 font-medium text-sm">
+                      Family Business
+                    </p>
+                  </div>
+                  <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
+                    <div className="flex flex-wrap items-center gap-2 mb-4">
+                      <span className="tag">Agribusiness</span>
+                      <span className="tag">Retail</span>
+                      <span className="tag">Interim Role</span>
+                    </div>
+                    <ul className="space-y-3 text-gray-600">
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Established daily Excel-based tracking for egg
+                          production, flock age, sales, and operating costs,
+                          improving visibility of day-to-day operations.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></span>
+                        <span>
+                          Conducted practical feasibility assessment for
+                          expansion (farm-adjacent restaurant concept) and
+                          supported basic digitization for a second farm
+                          business.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section id="education" className="py-24 border-t border-black/5">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-16 reveal">
+              <p className="section-number mb-4">
+                <span className="section-number-text">04 — EDUCATION</span>
+                <span className="section-number-line"></span>
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                Academic Background
               </h2>
             </div>
-            <div className="md:col-span-8 md:border-l md:border-white/10 md:pl-12 reveal-right">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">HIMAKOM</h3>
-                  <p className="text-gray-400">
-                    Computer Science Student Association
-                  </p>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Education 1 */}
+              <div className="edu-card p-8 border border-black/10 hover:border-accent transition-colors stagger-1">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      Bachelor of Computer Science
+                    </h3>
+                    <p className="text-accent font-medium">
+                      Universitas Gadjah Mada
+                    </p>
+                  </div>
+                  <span className="text-sm text-gray-500">
+                    Sep 2020 – Jul 2024
+                  </span>
                 </div>
-                <span className="text-sm text-gray-500">
-                  Oct 2020 – Oct 2022
-                </span>
+                <p className="text-gray-600 mb-4">Yogyakarta, Indonesia</p>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="text-sm font-medium px-3 py-1 bg-gray-100">
+                    GPA: 3.59/4.00
+                  </span>
+                </div>
+                <p className="text-sm text-gray-500">
+                  <span className="font-medium text-black">Thesis:</span> Binary
+                  Static Analysis Through Instruction and Operand Extraction and
+                  Agglomerative Hierarchical Clustering (AHC)
+                </p>
               </div>
-              <p className="text-gray-400 font-medium mb-4">
-                Social and Internal Affairs
-              </p>
-              <ul className="space-y-3 text-gray-400">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                  <span>
-                    Led execution for a talent campaign with 20+ participants
+
+              {/* Education 2 */}
+              <div className="edu-card p-8 border border-black/10 hover:border-accent transition-colors stagger-2">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      Exchange Semester
+                    </h3>
+                    <p className="text-accent font-medium">
+                      Universität Leipzig
+                    </p>
+                  </div>
+                  <span className="text-sm text-gray-500">
+                    Apr 2023 – Sep 2023
                   </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                  <span>
-                    Chaired a national UI/UX seminar with 200+ attendees,
-                    managing cross-team coordination and stakeholder
-                    communication
+                </div>
+                <p className="text-gray-600 mb-4">Leipzig, Germany</p>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="text-sm font-medium px-3 py-1 bg-accent text-white">
+                    DAAD Scholar
                   </span>
-                </li>
-              </ul>
+                  <span className="text-sm font-medium px-3 py-1 bg-gray-100">
+                    Digital Humanities
+                  </span>
+                </div>
+                <p className="text-sm text-gray-500">
+                  German Academic Exchange Service (DAAD) scholarship recipient
+                  for international exchange program.
+                </p>
+              </div>
+
+              {/* Education 3 */}
+              <div className="edu-card p-8 border border-black/10 hover:border-accent transition-colors stagger-1">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      International Baccalaureate Diploma
+                    </h3>
+                    <p className="text-accent font-medium">
+                      Yogyakarta Independent School
+                    </p>
+                  </div>
+                  <span className="text-sm text-gray-500">Jul 2020</span>
+                </div>
+                <p className="text-gray-600 mb-4">Yogyakarta, Indonesia</p>
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="text-sm font-medium px-3 py-1 bg-gray-100">
+                    Grade: 30/45
+                  </span>
+                </div>
+                <p className="text-sm text-gray-500">
+                  <span className="font-medium text-black">
+                    High-Level Subjects:
+                  </span>{" "}
+                  Design Technology, English, Environmental Systems and
+                  Societies
+                </p>
+                <p className="text-sm text-gray-500">
+                  <span className="font-medium text-black">
+                    Member of Student Council Committee
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Skills Section - Masonry Layout */}
-      <section id="skills" className="py-24 border-t border-black/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-16 reveal">
-            <p className="section-number mb-4">
-              <span className="section-number-text">06 — SKILLS</span>
-              <span className="section-number-line"></span>
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              Expertise & Tools
-            </h2>
+        {/* Leadership Section */}
+        <section className="py-24 bg-black text-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-12 gap-8 md:gap-12">
+              <div className="md:col-span-4 reveal-left">
+                <p className="section-number mb-4">
+                  <span className="section-number-text text-accent">
+                    05 — LEADERSHIP
+                  </span>
+                  <span className="section-number-line"></span>
+                </p>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                  Activities
+                </h2>
+              </div>
+              <div className="md:col-span-8 md:border-l md:border-white/10 md:pl-12 reveal-right">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">HIMAKOM</h3>
+                    <p className="text-gray-400">
+                      Computer Science Student Association
+                    </p>
+                  </div>
+                  <span className="text-sm text-gray-500">
+                    Oct 2020 – Oct 2022
+                  </span>
+                </div>
+                <p className="text-gray-400 font-medium mb-4">
+                  Social and Internal Affairs
+                </p>
+                <ul className="space-y-3 text-gray-400">
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                    <span>
+                      Led execution for a talent campaign with 20+ participants
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                    <span>
+                      Chaired a national UI/UX seminar with 200+ attendees,
+                      managing cross-team coordination and stakeholder
+                      communication
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
+        </section>
 
-          {/* 
+        {/* Skills Section - Masonry Layout */}
+        <section id="skills" className="py-24 border-t border-black/5">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-16 reveal">
+              <p className="section-number mb-4">
+                <span className="section-number-text">06 — SKILLS</span>
+                <span className="section-number-line"></span>
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                Expertise & Tools
+              </h2>
+            </div>
+
+            {/* 
        Switched from Grid to CSS Columns.
        md:columns-2 creates 2 columns on medium screens.
        lg:columns-3 creates 3 columns on large screens.
        gap-8 controls the space between items.
     */}
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-            {/* Column 1: Transformation & Consulting */}
-            <div className="reveal stagger-1 break-inside-avoid">
-              <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
-                Transformation & Consulting
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="tag">Business Transformation</span>
-                <span className="tag">Digital Transformation</span>
-                <span className="tag">Business Process Reengineering</span>
-                <span className="tag">Process Improvement</span>
-                <span className="tag">Workflow Analysis</span>
-                <span className="tag">Operating Model Design</span>
-                <span className="tag">Governance & Controls</span>
-                <span className="tag">Transformation PMO</span>
-                <span className="tag">Executive Storylining</span>
-              </div>
-            </div>
-
-            {/* Column 2: Process & Functional Tech */}
-            <div className="reveal stagger-2 break-inside-avoid">
-              <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
-                Process & Functional Tech
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="tag">As-is/To-be Mapping</span>
-                <span className="tag">APQC Framework</span>
-                <span className="tag">Requirements Gathering</span>
-                <span className="tag">Requirements Traceability Matrix</span>
-                <span className="tag">Salesforce Sales Cloud</span>
-                <span className="tag">Marketing Cloud</span>
-                <span className="tag">Data Architecture</span>
-                <span className="tag">Data Mapping</span>
-                <span className="tag">Integration Analysis</span>
-              </div>
-            </div>
-
-            {/* Column 3: Tools */}
-            <div className="reveal stagger-3 break-inside-avoid">
-              <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
-                Tools & Languages
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="tag">PowerPoint</span>
-                <span className="tag">Excel</span>
-                <span className="tag">Word</span>
-                <span className="tag">Visio</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Column 1: Transformation & Consulting */}
+              <div className="reveal stagger-1 break-inside-avoid">
+                <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
+                  Transformation & Consulting
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tag">Business Transformation</span>
+                  <span className="tag">Digital Transformation</span>
+                  <span className="tag">Business Process Reengineering</span>
+                  <span className="tag">Process Improvement</span>
+                  <span className="tag">Workflow Analysis</span>
+                  <span className="tag">Operating Model Design</span>
+                  <span className="tag">Governance & Controls</span>
+                  <span className="tag">Transformation PMO</span>
+                  <span className="tag">Executive Storylining</span>
+                </div>
               </div>
 
-              {/* Languages Section - Placed inside the same card for organic flow */}
-              <h4 className="text-sm font-medium text-gray-400 mt-6 mb-4">
-                Languages
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                <span className="tag">Indonesian (Native)</span>
-                <span className="tag">English (Fluent)</span>
+              {/* Column 2: Process & Functional Tech */}
+              <div className="reveal stagger-2 break-inside-avoid">
+                <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
+                  Process & Functional Tech
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tag">As-is/To-be Mapping</span>
+                  <span className="tag">APQC Framework</span>
+                  <span className="tag">Requirements Gathering</span>
+                  <span className="tag">Requirements Traceability Matrix</span>
+                  <span className="tag">Salesforce Sales Cloud</span>
+                  <span className="tag">Marketing Cloud</span>
+                  <span className="tag">Data Architecture</span>
+                  <span className="tag">Data Mapping</span>
+                  <span className="tag">Integration Analysis</span>
+                </div>
+              </div>
+
+              {/* Column 3: Tools */}
+              <div className="reveal stagger-3 break-inside-avoid">
+                <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
+                  Tools & Languages
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tag">PowerPoint</span>
+                  <span className="tag">Excel</span>
+                  <span className="tag">Word</span>
+                  <span className="tag">Visio</span>
+                </div>
+
+                {/* Languages Section - Placed inside the same card for organic flow */}
+                <h4 className="text-sm font-medium text-gray-400 mt-6 mb-4">
+                  Languages
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tag">Indonesian (Native)</span>
+                  <span className="tag">English (Fluent)</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact Section */}
-      <section className="py-24 bg-gray-50 border-t border-black/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="reveal-left">
-              <p className="section-number mb-4">
-                <span className="section-number-text">07 — CONTACT</span>
-                <span className="section-number-line"></span>
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
-                Let's Connect
-              </h2>
-              <p className="text-lg text-gray-600">
-                Seeking full-time roles in business transformation, process
-                improvement, digital transformation, or consulting.
-              </p>
-            </div>
-            <div className="space-y-6 reveal-right">
-              <a
-                href="mailto:mark.real.rumahorbo@gmail.com"
-                className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
-              >
-                <span className="text-gray-400 group-hover:text-accent transition-colors">
-                  <MailIcon />
-                </span>
-                <span className="text-gray-600 group-hover:text-black transition-colors">
-                  mark.real.rumahorbo@gmail.com
-                </span>
-              </a>
-              <a
-                href="tel:+6281215596949"
-                className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
-              >
-                <span className="text-gray-400 group-hover:text-accent transition-colors">
-                  <PhoneIcon />
-                </span>
-                <span className="text-gray-600 group-hover:text-black transition-colors">
-                  +62 812 1559 6949
-                </span>
-              </a>
-              <a
-                href="https://linkedin.com/in/mark-rumahorbo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
-              >
-                <span className="text-gray-400 group-hover:text-accent transition-colors">
-                  <LinkedInIcon />
-                </span>
-                <span className="text-gray-600 group-hover:text-black transition-colors">
-                  linkedin.com/in/mark-rumahorbo
-                </span>
-              </a>
-              <a
-                href="https://github.com/Markkreel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
-              >
-                <span className="text-gray-400 group-hover:text-accent transition-colors">
-                  <GithubIcon />
-                </span>
-                <span className="text-gray-600 group-hover:text-black transition-colors">
-                  github.com/Markkreel
-                </span>
-              </a>
+        {/* Contact Section */}
+        <section className="py-24 bg-gray-50 border-t border-black/5">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="reveal-left">
+                <p className="section-number mb-4">
+                  <span className="section-number-text">07 — CONTACT</span>
+                  <span className="section-number-line"></span>
+                </p>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+                  Let's Connect
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Seeking full-time roles in business transformation, process
+                  improvement, digital transformation, or consulting.
+                </p>
+              </div>
+              <div className="space-y-6 reveal-right">
+                <a
+                  href="mailto:mark.real.rumahorbo@gmail.com"
+                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
+                >
+                  <span className="text-gray-400 group-hover:text-accent transition-colors">
+                    <MailIcon />
+                  </span>
+                  <span className="text-gray-600 group-hover:text-black transition-colors">
+                    mark.real.rumahorbo@gmail.com
+                  </span>
+                </a>
+                <a
+                  href="tel:+6281215596949"
+                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
+                >
+                  <span className="text-gray-400 group-hover:text-accent transition-colors">
+                    <PhoneIcon />
+                  </span>
+                  <span className="text-gray-600 group-hover:text-black transition-colors">
+                    +62 812 1559 6949
+                  </span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/mark-rumahorbo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
+                >
+                  <span className="text-gray-400 group-hover:text-accent transition-colors">
+                    <LinkedInIcon />
+                  </span>
+                  <span className="text-gray-600 group-hover:text-black transition-colors">
+                    linkedin.com/in/mark-rumahorbo
+                  </span>
+                </a>
+                <a
+                  href="https://github.com/Markkreel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
+                >
+                  <span className="text-gray-400 group-hover:text-accent transition-colors">
+                    <GithubIcon />
+                  </span>
+                  <span className="text-gray-600 group-hover:text-black transition-colors">
+                    github.com/Markkreel
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Footer */}
       <footer className="py-8 border-t border-black/5">

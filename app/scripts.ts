@@ -167,11 +167,14 @@ export function initParallax() {
     if (hero) {
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY;
-            const rate = scrolled * 0.3;
+            const rate = scrolled * 0.4; // Slightly faster parallax movement
+            
+            // Fades out completely by the time you scroll 60% of the screen height
+            const opacity = Math.max(0, 1 - (scrolled / (window.innerHeight * 0.6)));
             
             if (scrolled < window.innerHeight) {
                 (hero as HTMLElement).style.transform = `translateY(${rate}px)`;
-                (hero as HTMLElement).style.opacity = String(1 - (scrolled / (window.innerHeight * 1.5)));
+                (hero as HTMLElement).style.opacity = String(opacity);
             }
         });
     }
