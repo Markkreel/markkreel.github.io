@@ -34,19 +34,11 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      // Using inline styles to FORCE position and zIndex, overriding any global CSS issues
       style={{
-        zIndex: 9999,
-        position: "fixed",
-        bottom: "32px",
-        right: "32px",
-        backgroundColor: "black",
-        color: "white",
         opacity: isVisible ? 1 : 0,
         pointerEvents: isVisible ? "auto" : "none",
-        transition: "opacity 0.3s ease",
       }}
-      className="p-3 rounded-full shadow-lg hover:bg-[#930507] hover:scale-110 transition-all duration-300"
+      className="fixed bottom-8 right-8 z-[9999] p-3 rounded-full bg-black text-white shadow-lg transition-all duration-300 hover:bg-[#930507] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(147,5,7,0.8)]"
       aria-label="Back to top"
     >
       <svg
