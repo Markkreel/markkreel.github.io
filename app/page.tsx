@@ -215,7 +215,7 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="hero-section min-h-[85vh] grid-bg flex items-start pt-16 md:items-center md:pt-0">
+        <section className="hero-section min-h-[85vh] grid-bg flex items-start pt-16 md:items-center md:pt-40">
           <div className="max-w-6xl mx-auto px-6 py-10 md:py-20 w-full">
             <div className="grid md:grid-cols-12 gap-8 md:gap-12">
               {/* Left Column */}
