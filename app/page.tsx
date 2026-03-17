@@ -64,44 +64,9 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Mark Rumahorbo",
-    jobTitle: "Digital Transformation Consultant",
-    url: "https://markrumahorbo.com",
-    sameAs: [
-      "https://linkedin.com/in/mark-rumahorbo",
-      "https://github.com/Markkreel",
-    ],
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "Universitas Gadjah Mada",
-    },
-    worksFor: {
-      "@type": "Organization",
-      name: "PwC South East Asia Consulting",
-    },
-    description:
-      "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
-    knowsAbout: [
-      "Digital Transformation",
-      "Salesforce Sales Cloud",
-      "Salesforce Marketing Cloud",
-      "Business Process Reengineering",
-      "APQC",
-      "Strategy Consulting",
-      "Data Architecture",
-    ],
-  };
-
   return (
     // NOTICE: No <body> tag here, just the content
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-black/5 transition-all duration-300">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">

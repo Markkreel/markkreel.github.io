@@ -46,6 +46,7 @@ const helvetica = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://markkreel.github.io"),
   // 1. Basic SEO
   title: "Mark Rumahorbo — Portfolio",
   description:
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
     title: "Mark Rumahorbo — Digital Transformation Consultant",
     description:
       "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
-    url: "https://markrumahorbo.com",
+    url: "https://markkreel.github.io",
     siteName: "Mark Rumahorbo Portfolio",
     images: [
       {
@@ -89,6 +90,27 @@ export const metadata: Metadata = {
     description:
       "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
     images: ["/img/og-image.png"],
+  },
+
+  // ADD THIS BLOCK BELOW:
+  other: {
+    "script:ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Mark Rumahorbo",
+      jobTitle: "Digital Transformation Consultant",
+      url: "https://markkreel.github.io",
+      sameAs: [
+        "https://linkedin.com/in/mark-rumahorbo",
+        "https://github.com/Markkreel",
+      ],
+      worksFor: {
+        "@type": "Organization",
+        name: "PwC South East Asia Consulting",
+      },
+      description:
+        "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
+    }),
   },
 };
 
