@@ -97,7 +97,7 @@ export function initSmoothScroll(): void {
       e.preventDefault();
 
       const href = anchor.getAttribute("href");
-      const target = href ? $(<HTMLElement>href) : null;
+      const target = href ? $<HTMLElement>(href) : null;
 
       if (!target) return;
 
