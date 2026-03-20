@@ -49,7 +49,7 @@ const helvetica = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://markkreel.github.io"),
 
-  title: "Mark Rumahorbo — Portfolio",
+  title: "Mark Rumahorbo",
   description:
     "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
   keywords: [
