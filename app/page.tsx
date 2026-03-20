@@ -115,8 +115,7 @@ export default function Home() {
               Resume
             </a>
             <a
-              href="mailto:mark.real.rumahorbo@gmail.com"
-              // Added 'border border-black' to match the Resume button size
+              href="#contact" // Changed from mailto:
               className="btn-primary text-sm font-medium px-4 py-2 bg-black text-white hover:bg-accent transition-colors relative overflow-hidden border border-black"
             >
               <span>Contact</span>
@@ -169,7 +168,7 @@ export default function Home() {
               Resume
             </a>
             <a
-              href="mailto:mark.real.rumahorbo@gmail.com"
+              href="#contact" // Changed from mailto:
               className="text-xl font-medium text-accent"
             >
               Contact
@@ -217,11 +216,11 @@ export default function Home() {
                     <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
                       Current Status
                     </p>
-                    <p className="text-lg">Open to Opportunities</p>
+                    <p className="text-lg">Exploring New Opportunities</p>
                   </div>
                   <div>
                     <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
-                      Recent Role
+                      Current Role
                     </p>
                     <p className="text-lg text-gray-600">
                       Associate Consultant (Contract-Based), <br /> PwC South
@@ -908,7 +907,10 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-24 bg-gray-50 border-t border-black/5">
+        <section
+          id="contact"
+          className="py-24 bg-gray-50 border-t border-black/5"
+        >
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="reveal-left">
