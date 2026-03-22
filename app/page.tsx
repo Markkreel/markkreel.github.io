@@ -91,7 +91,7 @@ export default function Home() {
               href="#projects"
               className="nav-link text-sm text-gray-600 hover:text-black transition-colors"
             >
-              Projects
+              Experiences
             </a>
             <a
               href="#education"
@@ -297,15 +297,15 @@ export default function Home() {
                   Available for full-time opportunities
                 </div>
 
-                <h3 className="text-2xl font-medium text-black mb-4 leading-tight">
+                {/* <h3 className="text-2xl font-medium text-black mb-4 leading-tight">
                   Bridging the gap between technical architecture and executive
                   strategy.
                 </h3>
 
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   I am a digital transformation and strategy consultant with a
-                  foundational degree in Computer Science and hands-on
-                  experience at{" "}
+                  <strong>Bachelor's degree in Computer Science (BCS)</strong>{" "}
+                  and hands-on experience at{" "}
                   <span className="text-black font-medium">
                     PwC South East Asia.
                   </span>{" "}
@@ -326,6 +326,35 @@ export default function Home() {
                   as-is analyses and structuring them into Target Operating
                   Models (TOM) and strategic recommendations that empower client
                   VPs and Directors to make confident business decisions.
+                </p> */}
+
+                <h3 className="text-2xl font-medium text-black mb-4 leading-tight">
+                  Bridging the gap between technical architecture and executive
+                  strategy.
+                </h3>
+
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  I am a digital transformation consultant with a{" "}
+                  <strong>Bachelor in Computer Science (BCS)</strong> and
+                  consulting experience at{" "}
+                  <span className="text-black font-medium">
+                    PwC South East Asia
+                  </span>
+                  . I specialize in translating complex operational bottlenecks
+                  and siloed data into executable transformation roadmaps for
+                  leading financial institutions and State-Owned Enterprises
+                  (SOEs).
+                </p>
+
+                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  My technical foundation allows me to seamlessly navigate{" "}
+                  <strong>Salesforce architectures</strong> and lead
+                  APQC-aligned <strong>process reengineering</strong>. However,
+                  my core value lies in <strong>executive storylining</strong>,
+                  structuring deep technical analyses into{" "}
+                  <strong>Target Operating Models (TOM)</strong> that empower
+                  client VPs and Directors to make confident, data-driven
+                  decisions.
                 </p>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6">
@@ -374,7 +403,7 @@ export default function Home() {
             <div className="mb-16 reveal">
               <p className="section-number mb-4">
                 <span className="section-number-text">
-                  03 — PROJECTS / EXPERIENCES
+                  03 — PROFESSIONAL EXPERIENCE
                 </span>
                 <span className="section-number-line"></span>
               </p>
@@ -1081,7 +1110,7 @@ export default function Home() {
                     </p>
                   </div>
                   <span className="text-sm text-gray-500">
-                    Sep 2020 – Jul 2024
+                    Sept 2020 - July 2024
                   </span>
                 </div>
                 <p className="text-gray-600 mb-4">Yogyakarta, Indonesia</p>
@@ -1109,7 +1138,7 @@ export default function Home() {
                     </p>
                   </div>
                   <span className="text-sm text-gray-500">
-                    Apr 2023 – Sep 2023
+                    April 2023 – September 2023
                   </span>
                 </div>
                 <p className="text-gray-600 mb-4">Leipzig, Germany</p>
@@ -1138,25 +1167,29 @@ export default function Home() {
                       Yogyakarta Independent School
                     </p>
                   </div>
-                  <span className="text-sm text-gray-500">Jul 2020</span>
+                  <span className="text-sm text-gray-500">July 2020</span>
                 </div>
                 <p className="text-gray-600 mb-4">Yogyakarta, Indonesia</p>
-                <div className="flex items-center gap-4 mb-4">
+
+                <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span className="text-sm font-medium px-3 py-1 bg-gray-100">
-                    Grade: 30/45
+                    Design Technology (HL)
+                  </span>
+                  <span className="text-sm font-medium px-3 py-1 bg-gray-100">
+                    English (HL)
+                  </span>
+                  <span className="text-sm font-medium px-3 py-1 bg-gray-100">
+                    Environmental Systems and Societes (HL)
                   </span>
                 </div>
-                <p className="text-sm text-gray-500">
-                  <span className="font-medium text-black">
-                    High-Level Subjects:
-                  </span>{" "}
-                  Design Technology, English, Environmental Systems and
-                  Societies
+
+                <p className="text-sm text-gray-600 mb-2">
+                  Rigorous pre-university program with a focus on environmental
+                  systems and design thinking.
                 </p>
-                <p className="text-sm text-gray-500">
-                  <span className="font-medium text-black">
-                    Member of Student Council Committee
-                  </span>
+                <p className="text-sm text-gray-800 font-medium flex items-center gap-2 mt-4">
+                  <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                  Student Council Committee Member
                 </p>
               </div>
             </div>
@@ -1194,7 +1227,7 @@ export default function Home() {
                       HIMAKOM (Computer Science Association)
                     </h3>
                     <p className="text-gray-400">
-                      Universitas Gadjah Mada • Oct 2020 – Oct 2022
+                      Universitas Gadjah Mada • October 2020 – October 2022
                     </p>
                   </div>
                 </div>

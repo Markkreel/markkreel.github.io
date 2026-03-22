@@ -48,21 +48,29 @@ const helvetica = localFont({
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL("https://markkreel.github.io"),
-
-  title: "Mark Rumahorbo",
+  title: "Mark Rumahorbo | Digital Transformation Consultant",
   description:
     "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
+
+  // 1. EXPANDED KEYWORDS
   keywords: [
-    "digital transformation",
-    "business consultant",
-    "Salesforce",
-    "BPR",
-    "PwC",
-    "Indonesia",
-    "process improvement",
-    "strategy consultant",
+    "Mark Rumahorbo",
+    "digital transformation consultant Jakarta",
+    "business process reengineering (BPR)",
+    "Salesforce data architecture",
+    "Target Operating Model (TOM) design",
+    "PwC strategy consultant",
+    "technology consulting Indonesia",
+    "APQC process mapping",
+    "financial services consultant",
+    "computer science to consulting",
   ],
   authors: [{ name: "Mark Rumahorbo" }],
+
+  // 2. ADD CANONICAL URL (Prevents Google from getting confused by duplicate links)
+  alternates: {
+    canonical: "https://markkreel.github.io",
+  },
 
   verification: {
     google: "t1gG8zXg_Ju0iRqq1wangwU9W37SGA9u-rJYrkN7wyQ",
