@@ -335,7 +335,7 @@ export default function Home() {
 
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   I am a digital transformation consultant with a{" "}
-                  <strong>Bachelor in Computer Science (BCS)</strong> and
+                  <strong>Bachelor of Computer Science (BCS)</strong> and
                   consulting experience at{" "}
                   <span className="text-black font-medium">
                     PwC South East Asia
