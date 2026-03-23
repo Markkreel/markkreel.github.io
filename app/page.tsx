@@ -1370,6 +1370,7 @@ export default function Home() {
                   <span className="tag">Excel</span>
                   <span className="tag">Word</span>
                   <span className="tag">Visio</span>
+                  <span className="tag">Tableau</span>
                   <span className="tag">SQL</span>
                   <span className="tag">Python</span>
                 </div>
