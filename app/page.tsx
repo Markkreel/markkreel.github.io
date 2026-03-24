@@ -337,8 +337,8 @@ export default function Home() {
                   I am a digital transformation consultant with a{" "}
                   <strong>Bachelor of Computer Science (BCS)</strong> and
                   consulting experience at{" "}
-                  <span className="text-black font-medium">
-                    PwC South East Asia
+                  <span className="text-[#930507] font-medium">
+                    <strong>PwC South East Asia</strong>
                   </span>
                   . I specialize in translating complex operational bottlenecks
                   and siloed data into executable transformation roadmaps for
