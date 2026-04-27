@@ -231,11 +231,11 @@ export default function Home() {
                       Current Role
                     </p>
                     <p className="text-lg text-gray-800 font-medium">
-                      Associate Consultant
+                      Consulting Intern
                     </p>
                     <p className="text-base text-gray-500">
-                      PwC South East Asia{" "}
-                      <span className="text-sm">(Contract)</span>
+                      PwC South East Asia Consulting
+                      {/* <span className="text-sm">(Contract)</span> */}
                     </p>
                   </div>
 
@@ -432,8 +432,7 @@ export default function Home() {
                   PwC South East Asia Consulting
                 </h3>
                 <p className="text-sm text-gray-500">
-                  Associate Consultant (Contract-Based), Financial Services
-                  Strategy & Operations
+                  Consulting Intern, Financial Services Strategy & Operations
                 </p>
               </div>
             </div>
@@ -493,6 +492,119 @@ export default function Home() {
                   </div>
                 </div>
               </div> */}
+
+              {/* Project 1 - CONVERTED TO "CASE STUDY" FORMAT */}
+              <div className="project-card bg-white p-8 stagger-3 border border-transparent hover:border-black/10 transition-colors shadow-sm hover:shadow-md">
+                <div className="grid md:grid-cols-12 gap-6">
+                  <div className="md:col-span-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="timeline-dot timeline-dot-accent"></div>
+                      <span className="text-sm text-gray-500">
+                        February 2026 – Present
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      Conglomeration Target Operating Model
+                    </h3>
+                    <p className="text-accent font-medium text-sm">
+                      Conglomeration Synergy Model
+                    </p>
+                  </div>
+                  <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
+                    <div className="flex flex-wrap items-center gap-2 mb-6">
+                      <span className="tag">Conglomeration Governance</span>
+                      <span className="tag">Target Operating Model</span>
+                      <span className="tag">6 Entities</span>
+                      <span className="tag">Financial Services</span>
+                    </div>
+
+                    {/* CASE STUDY FRAMEWORK */}
+                    <div className="space-y-4">
+                      {/* The Challenge */}
+                      {/* <div className="p-4 bg-gray-50 rounded-r-md border-l-2 border-gray-300">
+                        <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1.5 flex items-center gap-2">
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                            ></path>
+                          </svg>
+                          The Challenge
+                        </h4>
+                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                          Indonesia’s leading Sharia life insurer set an
+                          aggressive target to 3x their revenue and customer
+                          base over 3 years. To maintain their #1 market
+                          position, they needed to identify winning strategic
+                          initiatives by analyzing top-performing players
+                          locally and globally.
+                        </p>
+                      </div> */}
+
+                      {/* The Action */}
+                      {/* <div className="p-4 bg-gray-50 rounded-r-md border-l-2 border-gray-300">
+                        <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1.5 flex items-center gap-2">
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                            ></path>
+                          </svg>
+                          The Action
+                        </h4>
+                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                          Built a proprietary GWP-to-GDP benchmarking model.
+                          Synthesized 5 years of macroeconomic and competitor
+                          data to evaluate 10+ top players and 30+ products
+                          across Southeast Asia, the Middle East, and South Asia
+                          to uncover alternative growth levers.
+                        </p>
+                      </div> */}
+
+                      {/* The Impact */}
+                      <div className="p-4 bg-accent/5 rounded-r-md border-l-2 border-accent">
+                        <h4 className="text-sm font-bold text-accent uppercase tracking-widest mb-1.5 flex items-center gap-2">
+                          {/* <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                            ></path>
+                          </svg> */}
+                          Currently Ongoing
+                        </h4>
+                        {/* <p className="text-gray-900 font-medium text-sm md:text-base leading-relaxed">
+                          Delivered executive-ready market intelligence that
+                          provided leadership with a clear, data-driven view of
+                          penetration gaps and global best practices, directly
+                          informing the strategic roadmap required to achieve
+                          their 3-year hyper-growth target.
+                        </p> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               {/* Project 1 - CONVERTED TO "CASE STUDY" FORMAT */}
               <div className="project-card bg-white p-8 stagger-3 border border-transparent hover:border-black/10 transition-colors shadow-sm hover:shadow-md">
