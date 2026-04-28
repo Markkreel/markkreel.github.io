@@ -493,12 +493,17 @@ export default function Home() {
                 </div>
               </div> */}
 
-              {/* Project 1 - CONVERTED TO "CASE STUDY" FORMAT */}
-              <div className="project-card bg-white p-8 stagger-3 border border-transparent hover:border-black/10 transition-colors shadow-sm hover:shadow-md">
+              {/* Project 1 - Conglomeration Target Operating Model (IN PROGRESS) */}
+              {/* <div className="project-card bg-white p-8 stagger-3 border border-black/10 transition-colors shadow-sm hover:shadow-md relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent/60 to-transparent"></div>
+
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-3">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="timeline-dot timeline-dot-accent"></div>
+                      <div className="relative">
+                        <div className="w-3 h-3 rounded-full bg-accent"></div>
+                        <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-30"></span>
+                      </div>
                       <span className="text-sm text-gray-500">
                         February 2026 – Present
                       </span>
@@ -507,9 +512,27 @@ export default function Home() {
                       Conglomeration Target Operating Model
                     </h3>
                     <p className="text-accent font-medium text-sm">
-                      Conglomeration Synergy Model
+                      Operating Model & Governance Design
                     </p>
+
+                    <div className="mt-4 hidden md:block">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                          Progress
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-100 rounded-full h-1.5">
+                        <div
+                          className="bg-accent h-1.5 rounded-full transition-all duration-500"
+                          style={{ width: "45%" }}
+                        ></div>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-1.5">
+                        Phase 2 of 4
+                      </p>
+                    </div>
                   </div>
+
                   <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
                     <div className="flex flex-wrap items-center gap-2 mb-6">
                       <span className="tag">Conglomeration Governance</span>
@@ -518,88 +541,117 @@ export default function Home() {
                       <span className="tag">Financial Services</span>
                     </div>
 
-                    {/* CASE STUDY FRAMEWORK */}
-                    <div className="space-y-4">
-                      {/* The Challenge */}
-                      {/* <div className="p-4 bg-gray-50 rounded-r-md border-l-2 border-gray-300">
-                        <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1.5 flex items-center gap-2">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                            ></path>
-                          </svg>
-                          The Challenge
-                        </h4>
-                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                          Indonesia’s leading Sharia life insurer set an
-                          aggressive target to 3x their revenue and customer
-                          base over 3 years. To maintain their #1 market
-                          position, they needed to identify winning strategic
-                          initiatives by analyzing top-performing players
-                          locally and globally.
-                        </p>
-                      </div> */}
+                    <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+                      Designing a group-wide Target Operating Model for a major
+                      financial services conglomerate spanning 6 entities. The
+                      engagement covers governance structures, cross-entity
+                      process alignment, and shared services standardization to
+                      unlock operational synergies at scale.
+                    </p>
 
-                      {/* The Action */}
-                      {/* <div className="p-4 bg-gray-50 rounded-r-md border-l-2 border-gray-300">
-                        <h4 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1.5 flex items-center gap-2">
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                            ></path>
-                          </svg>
-                          The Action
-                        </h4>
-                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                          Built a proprietary GWP-to-GDP benchmarking model.
-                          Synthesized 5 years of macroeconomic and competitor
-                          data to evaluate 10+ top players and 30+ products
-                          across Southeast Asia, the Middle East, and South Asia
-                          to uncover alternative growth levers.
-                        </p>
-                      </div> */}
+                    <div className="relative p-4 bg-gradient-to-r from-gray-50 to-white rounded-md border border-gray-200 overflow-hidden">
+                      <div
+                        className="absolute inset-0 opacity-[0.02]"
+                        style={{
+                          backgroundImage:
+                            "radial-gradient(circle, #930507 1px, transparent 1px)",
+                          backgroundSize: "16px 16px",
+                        }}
+                      ></div>
 
-                      {/* The Impact */}
-                      <div className="p-4 bg-accent/5 rounded-r-md border-l-2 border-accent">
-                        <h4 className="text-sm font-bold text-accent uppercase tracking-widest mb-1.5 flex items-center gap-2">
-                          {/* <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                            ></path>
-                          </svg> */}
-                          Currently Ongoing
-                        </h4>
-                        {/* <p className="text-gray-900 font-medium text-sm md:text-base leading-relaxed">
-                          Delivered executive-ready market intelligence that
-                          provided leadership with a clear, data-driven view of
-                          penetration gaps and global best practices, directly
-                          informing the strategic roadmap required to achieve
-                          their 3-year hyper-growth target.
-                        </p> */}
+                      <div className="flex items-center gap-3 relative">
+                        <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-40"></span>
+                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+                        </span>
+                        <p className="text-gray-700 text-sm font-medium relative">
+                          Currently active engagement — details will be updated
+                          upon project completion.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+
+              {/* Project 1 - Conglomeration Target Operating Model (IN PROGRESS) */}
+              <div className="project-card bg-white p-8 stagger-3 border border-black/10 transition-colors shadow-sm hover:shadow-md relative overflow-hidden">
+                {/* Active engagement accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-accent"></div>
+
+                <div className="grid md:grid-cols-12 gap-6">
+                  <div className="md:col-span-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="relative">
+                        <div className="w-3 h-3 rounded-full bg-accent"></div>
+                        <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-30"></span>
+                      </div>
+                      <span className="text-sm text-gray-500">
+                        February 2026 – Present
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      Conglomeration Target Operating Model
+                    </h3>
+                    <p className="text-accent font-medium text-sm">
+                      Operating Model & Governance Design
+                    </p>
+
+                    {/* Progress indicator */}
+                    <div className="mt-4 hidden md:block">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                          Progress
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-100 rounded-full h-1.5">
+                        <div
+                          className="bg-accent h-1.5 rounded-full transition-all duration-500"
+                          style={{ width: "50%" }}
+                        ></div>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-1.5">
+                        Phase 1 of 2
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
+                    <div className="flex flex-wrap items-center gap-2 mb-6">
+                      <span className="tag">Conglomeration Governance</span>
+                      <span className="tag">Target Operating Model</span>
+                      <span className="tag">6 Entities</span>
+                      <span className="tag">Financial Services</span>
+                    </div>
+
+                    {/* Scope Overview */}
+                    <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+                      Designing a group-wide Target Operating Model for a major
+                      financial services conglomerate spanning 6 entities. The
+                      engagement covers governance structures, cross-entity
+                      process alignment, and shared services standardization to
+                      unlock operational synergies at scale.
+                    </p>
+
+                    {/* Status Banner */}
+                    <div className="relative p-4 bg-gray-50 border border-gray-200 overflow-hidden">
+                      <div
+                        className="absolute inset-0 opacity-[0.02]"
+                        style={{
+                          backgroundImage:
+                            "radial-gradient(circle, #930507 1px, transparent 1px)",
+                          backgroundSize: "16px 16px",
+                        }}
+                      ></div>
+
+                      <div className="flex items-center gap-3 relative">
+                        <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-40"></span>
+                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+                        </span>
+                        <p className="text-gray-700 text-sm font-medium relative">
+                          Currently active engagement.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -1309,8 +1361,18 @@ export default function Home() {
         </section>
 
         {/* Leadership Section */}
-        <section className="py-24 bg-black text-white">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="py-24 bg-black text-white relative overflow-hidden">
+          {/* Subtle dot grid for depth */}
+          <div
+            className="absolute inset-0 opacity-[0.02]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, #fff 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
+          ></div>
+
+          <div className="max-w-6xl mx-auto px-6 relative">
             <div className="grid md:grid-cols-12 gap-8 md:gap-12">
               <div className="md:col-span-4 reveal-left">
                 <p className="section-number mb-4">
@@ -1330,6 +1392,140 @@ export default function Home() {
 
               <div className="md:col-span-8 md:border-l md:border-white/10 md:pl-12 reveal-right">
                 {/* Organization Header */}
+                <div className="flex items-center gap-5 mb-10 pb-8 border-b border-white/10">
+                  <div className="w-14 h-14 flex-shrink-0 bg-[#171717] border border-white/10 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg tracking-tight">
+                      CS
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">HIMAKOM</h3>
+                    <p className="text-gray-500 text-sm">
+                      Computer Science Association
+                    </p>
+                    <p className="text-gray-400 text-sm mt-0.5">
+                      Universitas Gadjah Mada • Oct 2020 – Oct 2022
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Role 1: Event Chairman */}
+                  <div className="relative">
+                    {/* Timeline spine */}
+                    <div className="absolute left-0 top-0 bottom-0 ml-[5px] w-px bg-gradient-to-b from-accent via-accent/60 to-transparent"></div>
+                    <div className="absolute w-3 h-3 bg-accent rounded-full left-[-1.2] top-8 ml-[1.5px] shadow-[0_0_12px_rgba(147,5,7,0.6)]"></div>
+
+                    <div className="ml-8 bg-white/[0.04] border border-white/[0.06] rounded-lg p-6 hover:bg-white/[0.06] transition-all duration-300">
+                      {/* Title row */}
+                      <div className="flex flex-wrap items-center gap-3 mb-1">
+                        <h4 className="text-lg font-medium text-white">
+                          Event Chairman
+                        </h4>
+                        <span className="px-2.5 py-0.5 bg-accent/15 text-accent text-[11px] font-semibold uppercase tracking-wider rounded-full border border-accent/20">
+                          Lead Role
+                        </span>
+                      </div>
+                      <p className="text-gray-500 text-sm mb-1">
+                        National UI/UX Seminar
+                      </p>
+                      <p className="text-gray-500 text-xs font-medium uppercase tracking-wider mb-5">
+                        Cross-Functional Team Management
+                      </p>
+
+                      <ul className="space-y-3 text-gray-400 text-sm md:text-base">
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-accent/50 rounded-full mt-2 flex-shrink-0"></span>
+                          <span>
+                            Directed a cross-functional student committee
+                            (Liaison, Operations, Marketing) to plan and execute
+                            a national-level technology seminar.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-accent/50 rounded-full mt-2 flex-shrink-0"></span>
+                          <span>
+                            Owned external stakeholder relations, successfully
+                            sourcing and securing two industry-expert alumni as
+                            keynote speakers, driving an attendance of{" "}
+                            <span className="text-white font-medium">200+</span>{" "}
+                            participants.
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Role 2: Brand & Communications Lead */}
+                  <div className="relative">
+                    <div className="absolute left-0 top-0 bottom-0 ml-[5px] w-px bg-gradient-to-b from-gray-600 via-gray-600/60 to-transparent"></div>
+                    <div className="absolute w-3 h-3 bg-gray-600 rounded-full left-[-1.2] top-8 ml-[1.5px]"></div>
+
+                    <div className="ml-8 bg-white/[0.02] border border-white/[0.04] rounded-lg p-6 hover:bg-white/[0.04] transition-all duration-300">
+                      <h4 className="text-lg font-medium text-white mb-1">
+                        Brand & Communications Lead{" "}
+                        <span className="text-gray-500 font-normal text-base">
+                          — Student Talent Campaign
+                        </span>
+                      </h4>
+                      <p className="text-gray-500 text-xs font-medium uppercase tracking-wider mb-5">
+                        Project Ownership & Design
+                      </p>
+
+                      <ul className="space-y-3 text-gray-400 text-sm md:text-base">
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                          <span>
+                            Managed a{" "}
+                            <span className="text-white font-medium">
+                              3-person
+                            </span>{" "}
+                            creative team to establish the end-to-end visual
+                            identity, event theme, and digital marketing
+                            strategy.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                          <span>
+                            Oversaw the production of all promotional assets and
+                            social media publications, successfully driving
+                            engagement for a showcase featuring{" "}
+                            <span className="text-white font-medium">20+</span>{" "}
+                            performers.
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership Section */}
+        {/* <section className="py-24 bg-black text-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-12 gap-8 md:gap-12">
+              <div className="md:col-span-4 reveal-left">
+                <p className="section-number mb-4">
+                  <span className="section-number-text text-accent">
+                    05 — LEADERSHIP
+                  </span>
+                  <span className="section-number-line"></span>
+                </p>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+                  Student Leadership
+                </h2>
+                <p className="text-gray-400 mt-4 max-w-sm">
+                  Demonstrated track record of cross-functional team management
+                  and event execution.
+                </p>
+              </div>
+
+              <div className="md:col-span-8 md:border-l md:border-white/10 md:pl-12 reveal-right">
+                
                 <div className="flex items-center gap-4 mb-8 pb-6 border-b border-white/10">
                   <div className="w-12 h-12 flex-shrink-0 bg-white/10 flex items-center justify-center rounded-sm">
                     <span className="text-white font-bold text-base">CS</span>
@@ -1345,7 +1541,7 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-10">
-                  {/* Leadership Role 1: Seminar Chairman */}
+                
                   <div className="relative border-l-2 border-accent/50 pl-6 pb-2">
                     <div className="absolute w-3 h-3 bg-accent rounded-full -left-[7px] top-1.5 shadow-[0_0_10px_rgba(147,5,7,0.8)]"></div>
                     <h4 className="text-lg font-medium text-white mb-1">
@@ -1378,7 +1574,7 @@ export default function Home() {
                     </ul>
                   </div>
 
-                  {/* Leadership Role 2: Head of PDD */}
+        
                   <div className="relative pl-6 border-l-2 border-[#464646] pb-2">
                     <div className="absolute w-3 h-3 bg-[#717171] rounded-full -left-[7px] top-1.5"></div>
                     <h4 className="text-lg font-medium text-white mb-1">
@@ -1413,9 +1609,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        {/* Skills Section - Masonry Layout */}
+        {/* Skills Section — Option 2: Editorial Bands */}
         <section id="skills" className="py-24 border-t border-black/5">
           <div className="max-w-6xl mx-auto px-6">
             <div className="mb-16 reveal">
@@ -1428,72 +1624,156 @@ export default function Home() {
               </h2>
             </div>
 
-            {/* 
-       Switched from Grid to CSS Columns.
-       md:columns-2 creates 2 columns on medium screens.
-       lg:columns-3 creates 3 columns on large screens.
-       gap-8 controls the space between items.
-    */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Column 1: Transformation & Consulting */}
-              <div className="reveal stagger-1 break-inside-avoid">
-                <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
-                  Transformation & Consulting
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="tag">Business Transformation</span>
-                  <span className="tag">Digital Transformation</span>
-                  <span className="tag">Business Process Reengineering</span>
-                  <span className="tag">Process Improvement</span>
-                  <span className="tag">Workflow Analysis</span>
-                  <span className="tag">Operating Model Design</span>
-                  <span className="tag">Governance & Controls</span>
-                  <span className="tag">Transformation PMO</span>
-                  <span className="tag">Executive Storylining</span>
+            <div className="space-y-1">
+              {/* Band 1: Transformation & Consulting */}
+              <div className="reveal stagger-1 bg-white border border-black/[0.06] rounded-lg overflow-hidden hover:border-black/10 transition-colors">
+                <div className="grid md:grid-cols-12 min-h-[120px]">
+                  {/* Left Label */}
+                  <div className="md:col-span-4 p-6 md:p-8 md:border-r md:border-black/5 flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-accent/[0.06] border border-accent/10 flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 text-accent"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold mb-0.5">
+                        Transformation & Consulting
+                      </h3>
+                      <p className="text-xs text-gray-400">9 skills</p>
+                    </div>
+                  </div>
+
+                  {/* Right Skills */}
+                  <div className="md:col-span-8 p-6 md:p-8 flex items-center">
+                    <div className="flex flex-wrap gap-2">
+                      <span className="tag">Business Transformation</span>
+                      <span className="tag">Digital Transformation</span>
+                      <span className="tag">
+                        Business Process Reengineering
+                      </span>
+                      <span className="tag">Process Improvement</span>
+                      <span className="tag">Workflow Analysis</span>
+                      <span className="tag">Operating Model Design</span>
+                      <span className="tag">Governance & Controls</span>
+                      <span className="tag">Transformation PMO</span>
+                      <span className="tag">Executive Storylining</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Column 2: Process & Functional Tech */}
-              <div className="reveal stagger-2 break-inside-avoid">
-                <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
-                  Process & Functional Tech
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="tag">As-is/To-be Mapping</span>
-                  <span className="tag">APQC Framework</span>
-                  <span className="tag">Requirements Gathering</span>
-                  <span className="tag">Requirements Traceability Matrix</span>
-                  <span className="tag">Salesforce Sales Cloud</span>
-                  <span className="tag">Marketing Cloud</span>
-                  <span className="tag">Data Architecture</span>
-                  <span className="tag">Data Mapping</span>
-                  <span className="tag">Integration Analysis</span>
-                  <span className="tag">Data Analysis</span>
+              {/* Band 2: Process & Functional Tech */}
+              <div className="reveal stagger-2 bg-gray-50 border border-black/[0.04] rounded-lg overflow-hidden hover:border-black/10 transition-colors">
+                <div className="grid md:grid-cols-12 min-h-[120px]">
+                  <div className="md:col-span-4 p-6 md:p-8 md:border-r md:border-black/5 flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-white border border-black/[0.06] flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 text-gray-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold mb-0.5">
+                        Process & Functional Tech
+                      </h3>
+                      <p className="text-xs text-gray-400">10 skills</p>
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-8 p-6 md:p-8 flex items-center">
+                    <div className="flex flex-wrap gap-2">
+                      <span className="tag">As-is/To-be Mapping</span>
+                      <span className="tag">APQC Framework</span>
+                      <span className="tag">Requirements Gathering</span>
+                      <span className="tag">
+                        Requirements Traceability Matrix
+                      </span>
+                      <span className="tag">Salesforce Sales Cloud</span>
+                      <span className="tag">Marketing Cloud</span>
+                      <span className="tag">Data Architecture</span>
+                      <span className="tag">Data Mapping</span>
+                      <span className="tag">Integration Analysis</span>
+                      <span className="tag">Data Analysis</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Column 3: Tools */}
-              <div className="reveal stagger-3 break-inside-avoid">
-                <h3 className="text-lg font-semibold mb-6 pb-4 border-b border-black/10">
-                  Tools & Languages
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <span className="tag">PowerPoint</span>
-                  <span className="tag">Excel</span>
-                  <span className="tag">Word</span>
-                  <span className="tag">Visio</span>
-                  <span className="tag">Tableau</span>
-                  <span className="tag">SQL</span>
-                  <span className="tag">Python</span>
-                </div>
+              {/* Band 3: Tools & Languages */}
+              <div className="reveal stagger-3 bg-white border border-black/[0.06] rounded-lg overflow-hidden hover:border-black/10 transition-colors">
+                <div className="grid md:grid-cols-12 min-h-[120px]">
+                  <div className="md:col-span-4 p-6 md:p-8 md:border-r md:border-black/5 flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-gray-100 border border-black/[0.04] flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 text-gray-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold mb-0.5">
+                        Tools & Languages
+                      </h3>
+                      <p className="text-xs text-gray-400">
+                        7 tools + 2 languages
+                      </p>
+                    </div>
+                  </div>
 
-                {/* Languages Section - Placed inside the same card for organic flow */}
-                <h4 className="text-sm font-medium text-gray-400 mt-6 mb-4">
-                  Languages
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  <span className="tag">Indonesian (Native)</span>
-                  <span className="tag">English (Fluent)</span>
+                  <div className="md:col-span-8 p-6 md:p-8 flex items-center">
+                    <div className="flex flex-wrap gap-3">
+                      {/* Tools */}
+                      <div className="flex flex-wrap gap-2">
+                        <span className="tag">PowerPoint</span>
+                        <span className="tag">Excel</span>
+                        <span className="tag">Word</span>
+                        <span className="tag">Visio</span>
+                        <span className="tag">Tableau</span>
+                        <span className="tag">SQL</span>
+                        <span className="tag">Python</span>
+                      </div>
+
+                      {/* Divider */}
+                      <div className="w-px h-6 bg-black/10 self-center"></div>
+
+                      {/* Languages */}
+                      <div className="flex flex-wrap gap-2">
+                        <span className="tag bg-accent/[0.06] border-accent/15 text-accent">
+                          Indonesian (Native)
+                        </span>
+                        <span className="tag bg-accent/[0.06] border-accent/15 text-accent">
+                          English (Fluent)
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1506,8 +1786,9 @@ export default function Home() {
           className="py-24 bg-gray-50 border-t border-black/5"
         >
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="reveal-left">
+            <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
+              {/* Left Column — CTA Area */}
+              <div className="md:col-span-5 reveal-left">
                 <p className="section-number mb-4">
                   <span className="section-number-text">07 — CONTACT</span>
                   <span className="section-number-line"></span>
@@ -1515,85 +1796,149 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
                   Let's Connect
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-600 mb-8">
                   Seeking full-time roles in business transformation, process
                   improvement, digital transformation, or consulting.
                 </p>
-              </div>
-              <div className="space-y-4 reveal-right">
+
+                {/* Primary CTA — Email as the hero action */}
                 <a
                   href="mailto:mark.real.rumahorbo@gmail.com"
-                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
+                  className="group inline-flex items-center gap-3 px-6 py-4 bg-black text-white hover:bg-accent transition-all duration-300 w-full md:w-auto"
                 >
-                  <span className="text-gray-400 group-hover:text-accent transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
                     <MailIcon />
-                  </span>
-                  <span className="text-gray-600 group-hover:text-black transition-colors">
-                    mark.real.rumahorbo@gmail.com
-                  </span>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-xs text-white/50 uppercase tracking-wider font-medium">
+                      Email me directly
+                    </p>
+                    <p className="text-sm font-medium">
+                      mark.real.rumahorbo@gmail.com
+                    </p>
+                  </div>
+                  <svg
+                    className="w-4 h-4 ml-auto opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
                 </a>
-                <a
-                  href="tel:+6281215596949"
-                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
-                >
-                  <span className="text-gray-400 group-hover:text-accent transition-colors">
-                    <PhoneIcon />
-                  </span>
-                  <span className="text-gray-600 group-hover:text-black transition-colors">
-                    +62 812 1559 6949
-                  </span>
-                </a>
-                <a
-                  href="https://linkedin.com/in/mark-rumahorbo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
-                >
-                  <span className="text-gray-400 group-hover:text-accent transition-colors">
-                    <LinkedInIcon />
-                  </span>
-                  <span className="text-gray-600 group-hover:text-black transition-colors">
-                    linkedin.com/in/mark-rumahorbo
-                  </span>
-                </a>
-                <a
-                  href="https://github.com/Markkreel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
-                >
-                  <span className="text-gray-400 group-hover:text-accent transition-colors">
-                    <GithubIcon />
-                  </span>
-                  <span className="text-gray-600 group-hover:text-black transition-colors">
-                    github.com/Markkreel
-                  </span>
-                </a>
-                <a
-                  href="/resume"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-card flex items-center gap-4 p-4 bg-white border border-black/10 hover:border-accent transition-colors group"
-                >
-                  <span className="text-gray-400 group-hover:text-accent transition-colors">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                  </span>
-                  <span className="text-gray-600 group-hover:text-black transition-colors">
-                    Download Resume PDF
-                  </span>
-                </a>
+              </div>
+
+              {/* Right Column — Other Channels */}
+              <div className="md:col-span-7 reveal-right">
+                {/* Section label */}
+                <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-5">
+                  Other Channels
+                </p>
+
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {/* Phone */}
+                  <a
+                    href="tel:+6281215596949"
+                    className="contact-card group flex items-center gap-4 p-5 bg-white border border-black/[0.06]hover:border-accent/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gray-50 border border-black/[0.04] flex items-center justify-center flex-shrink-0 group-hover:bg-accent/[0.06] group-hover:border-accent/10 transition-all duration-300">
+                      <span className="text-gray-400 group-hover:text-accent transition-colors">
+                        <PhoneIcon />
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs text-gray-400 font-medium mb-0.5">
+                        Phone
+                      </p>
+                      <p className="text-sm text-gray-700 font-medium truncate group-hover:text-black transition-colors">
+                        +62 812 1559 6949
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* LinkedIn */}
+                  <a
+                    href="https://linkedin.com/in/mark-rumahorbo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-card group flex items-center gap-4 p-5 bg-white border border-black/[0.06]hover:border-accent/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gray-50 border border-black/[0.04] flex items-center justify-center flex-shrink-0 group-hover:bg-accent/[0.06] group-hover:border-accent/10 transition-all duration-300">
+                      <span className="text-gray-400 group-hover:text-accent transition-colors">
+                        <LinkedInIcon />
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs text-gray-400 font-medium mb-0.5">
+                        LinkedIn
+                      </p>
+                      <p className="text-sm text-gray-700 font-medium truncate group-hover:text-black transition-colors">
+                        mark-rumahorbo
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* GitHub */}
+                  <a
+                    href="https://github.com/Markkreel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-card group flex items-center gap-4 p-5 bg-white border border-black/[0.06]hover:border-accent/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gray-50 border border-black/[0.04] flex items-center justify-center flex-shrink-0 group-hover:bg-accent/[0.06] group-hover:border-accent/10 transition-all duration-300">
+                      <span className="text-gray-400 group-hover:text-accent transition-colors">
+                        <GithubIcon />
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs text-gray-400 font-medium mb-0.5">
+                        GitHub
+                      </p>
+                      <p className="text-sm text-gray-700 font-medium truncate group-hover:text-black transition-colors">
+                        Markkreel
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* Resume */}
+                  <a
+                    href="/resume"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-card group flex items-center gap-4 p-5 bg-white border border-black/[0.06]hover:border-accent hover:bg-accent hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gray-50 border border-black/[0.04] flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 group-hover:border-white/20 transition-all duration-300">
+                      <span className="text-gray-400 group-hover:text-white transition-colors">
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs text-gray-400 font-medium mb-0.5 group-hover:text-white/60 transition-colors">
+                        Resume
+                      </p>
+                      <p className="text-sm text-gray-700 font-medium truncate group-hover:text-white transition-colors">
+                        Download PDF
+                      </p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
