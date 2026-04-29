@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import path from "path";
 
 // Helper SVG Components (Keep these as they are clean)
 const LinkedInIcon = () => (
@@ -575,7 +576,7 @@ export default function Home() {
               </div> */}
 
               {/* Project 1 - Conglomeration Target Operating Model (IN PROGRESS) */}
-              <div className="project-card bg-white p-8 stagger-3 border border-black/10 transition-colors shadow-sm hover:shadow-md relative overflow-hidden">
+              <div className="project-card bg-white p-8 stagger-3 border border-black/10 transition-colors shadow-sm hover:shadow-md hover:border-black/10 relative overflow-hidden">
                 {/* Active engagement accent bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-accent"></div>
 
@@ -583,7 +584,7 @@ export default function Home() {
                   <div className="md:col-span-3">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="relative">
-                        <div className="w-3 h-3 rounded-full bg-accent"></div>
+                        <div className="w-2 h-2 rounded-full bg-accent"></div>
                         <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-30"></span>
                       </div>
                       <span className="text-sm text-gray-500">
@@ -658,7 +659,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Project 1 - CONVERTED TO "CASE STUDY" FORMAT */}
+              {/* Project 1 — Case Study Format */}
               <div className="project-card bg-white p-8 stagger-3 border border-transparent hover:border-black/10 transition-colors shadow-sm hover:shadow-md">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-3">
@@ -674,7 +675,44 @@ export default function Home() {
                     <p className="text-accent font-medium text-sm">
                       Growth Strategy & Benchmarking
                     </p>
+
+                    {/* Quantifiable Metrics */}
+                    <div className="mt-6 hidden md:block space-y-3 border-t border-black/5 pt-5">
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          3x
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Revenue Growth Target
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          30+
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Products Benchmarked
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          10+
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Competitors Analyzed
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          3
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Regions Covered
+                        </p>
+                      </div>
+                    </div>
                   </div>
+
                   <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
                     <div className="flex flex-wrap items-center gap-2 mb-6">
                       <span className="tag">Insurance</span>
@@ -683,7 +721,6 @@ export default function Home() {
                       <span className="tag">Strategic Growth</span>
                     </div>
 
-                    {/* CASE STUDY FRAMEWORK */}
                     <div className="space-y-4">
                       {/* The Challenge */}
                       <div className="p-4 bg-gray-50 rounded-r-md border-l-2 border-gray-300">
@@ -704,7 +741,7 @@ export default function Home() {
                           The Challenge
                         </h4>
                         <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                          Indonesia’s leading Sharia life insurer set an
+                          Indonesia's leading Sharia life insurer set an
                           aggressive target to 3x their revenue and customer
                           base over 3 years. To maintain their #1 market
                           position, they needed to identify winning strategic
@@ -826,7 +863,7 @@ export default function Home() {
                 </div>
               </div> */}
 
-              {/* Project 2 - CONVERTED TO "CASE STUDY" FORMAT */}
+              {/* Project 2 — Case Study Format */}
               <div className="project-card bg-white p-8 stagger-2 border border-transparent hover:border-black/10 transition-colors shadow-sm hover:shadow-md">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-3">
@@ -842,7 +879,44 @@ export default function Home() {
                     <p className="text-accent font-medium text-sm">
                       BPR Initiative
                     </p>
+
+                    {/* Quantifiable Metrics */}
+                    <div className="mt-6 hidden md:block space-y-3 border-t border-black/5 pt-5">
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          130+
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Processes Redesigned
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          20+
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Stakeholder Interviews
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          100+
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          KPIs Developed
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          7
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Entities Covered
+                        </p>
+                      </div>
+                    </div>
                   </div>
+
                   <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
                     <div className="flex flex-wrap items-center gap-2 mb-6">
                       <span className="tag">Shipping & Logistics</span>
@@ -851,7 +925,6 @@ export default function Home() {
                       <span className="tag">Operating Model</span>
                     </div>
 
-                    {/* CASE STUDY FRAMEWORK: Challenge, Action, Impact */}
                     <div className="space-y-4">
                       {/* The Challenge */}
                       <div className="p-4 bg-gray-50 rounded-r-md border-l-2 border-gray-300">
@@ -905,7 +978,7 @@ export default function Home() {
                         </p>
                       </div>
 
-                      {/* The Impact (Styled slightly differently to pop out) */}
+                      {/* The Impact */}
                       <div className="p-4 bg-accent/5 rounded-r-md border-l-2 border-accent">
                         <h4 className="text-xs font-bold text-accent uppercase tracking-widest mb-1.5 flex items-center gap-2">
                           <svg
@@ -991,7 +1064,7 @@ export default function Home() {
                 </div>
               </div> */}
 
-              {/* Project 3 - CONVERTED TO "CASE STUDY" FORMAT */}
+              {/* Project 3 — Case Study Format */}
               <div className="project-card bg-white p-8 stagger-1 border border-transparent hover:border-black/10 transition-colors shadow-sm hover:shadow-md">
                 <div className="grid md:grid-cols-12 gap-6">
                   <div className="md:col-span-3">
@@ -1007,7 +1080,36 @@ export default function Home() {
                     <p className="text-accent font-medium text-sm">
                       Enterprise CRM Strategy
                     </p>
+
+                    {/* Quantifiable Metrics */}
+                    <div className="mt-6 hidden md:block space-y-3 border-t border-black/5 pt-5">
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          100+
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Data Fields Mapped
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          50+
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          System Integrations
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-black tracking-tight">
+                          3
+                        </p>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">
+                          Implementation Phases
+                        </p>
+                      </div>
+                    </div>
                   </div>
+
                   <div className="md:col-span-9 md:border-l md:border-black/10 md:pl-8">
                     <div className="flex flex-wrap items-center gap-2 mb-6">
                       <span className="tag">Financial Services</span>
@@ -1016,7 +1118,6 @@ export default function Home() {
                       <span className="tag">Data Architecture</span>
                     </div>
 
-                    {/* CASE STUDY FRAMEWORK */}
                     <div className="space-y-4">
                       {/* The Challenge */}
                       <div className="p-4 bg-gray-50 rounded-r-md border-l-2 border-gray-300">
@@ -1414,7 +1515,7 @@ export default function Home() {
                   <div className="relative">
                     {/* Timeline spine */}
                     <div className="absolute left-0 top-0 bottom-0 ml-[5px] w-px bg-gradient-to-b from-accent via-accent/60 to-transparent"></div>
-                    <div className="absolute w-3 h-3 bg-accent rounded-full left-[-1.2] top-8 ml-[1.5px] shadow-[0_0_12px_rgba(147,5,7,0.6)]"></div>
+                    <div className="absolute w-3 h-3 bg-accent rounded-full left-[-1.3] top-8 ml-[1.5px] shadow-[0_0_12px_rgba(147,5,7,0.6)]"></div>
 
                     <div className="ml-8 bg-white/[0.04] border border-white/[0.06] rounded-lg p-6 hover:bg-white/[0.06] transition-all duration-300">
                       {/* Title row */}
@@ -1459,7 +1560,7 @@ export default function Home() {
                   {/* Role 2: Brand & Communications Lead */}
                   <div className="relative">
                     <div className="absolute left-0 top-0 bottom-0 ml-[5px] w-px bg-gradient-to-b from-gray-600 via-gray-600/60 to-transparent"></div>
-                    <div className="absolute w-3 h-3 bg-gray-600 rounded-full left-[-1.2] top-8 ml-[1.5px]"></div>
+                    <div className="absolute w-3 h-3 bg-gray-600 rounded-full left-[-1.3] top-8 ml-[1.5px]"></div>
 
                     <div className="ml-8 bg-white/[0.02] border border-white/[0.04] rounded-lg p-6 hover:bg-white/[0.04] transition-all duration-300">
                       <h4 className="text-lg font-medium text-white mb-1">
