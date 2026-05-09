@@ -349,10 +349,10 @@ export default function Home() {
 
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
                   My technical foundation allows me to seamlessly navigate{" "}
-                  <strong>Salesforce architectures</strong> and lead
-                  APQC-aligned <strong>process reengineering</strong>. However,
-                  my core value lies in <strong>executive storylining</strong>,
-                  structuring deep technical analyses into{" "}
+                  <strong>Salesforce architectures</strong> and APQC-aligned{" "}
+                  <strong>process reengineering</strong>. However, my core value
+                  lies in <strong>executive storylining</strong>, structuring
+                  deep technical analyses into{" "}
                   <strong>Target Operating Models (TOM)</strong> that empower
                   client VPs and Directors to make confident, data-driven
                   decisions.
