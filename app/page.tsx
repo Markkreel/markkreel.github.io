@@ -295,7 +295,7 @@ export default function Home() {
                     <span className="status-dot-pulse"></span>
                     <span className="status-dot-ring"></span>
                   </span>
-                  Available for full-time opportunities
+                  Looking for full-time opportunities
                 </div>
 
                 {/* <h3 className="text-2xl font-medium text-black mb-4 leading-tight">
