@@ -1727,11 +1727,12 @@ export default function Home() {
 
             <div className="space-y-1">
               {/* Band 1: Transformation & Consulting */}
-              <div className="reveal stagger-1 bg-white border border-black/[0.06] rounded-lg overflow-hidden hover:border-black/10 transition-colors">
+              <div className="reveal stagger-1 bg-white border border-black/[0.06] overflow-hidden hover:border-black/10 transition-colors">
                 <div className="grid md:grid-cols-12 min-h-[120px]">
                   {/* Left Label */}
                   <div className="md:col-span-4 p-6 md:p-8 md:border-r md:border-black/5 flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-accent/[0.06] border border-accent/10 flex items-center justify-center flex-shrink-0">
+                    {/* Removed rounded-lg */}
+                    <div className="w-10 h-10 bg-accent/[0.06] border border-accent/10 flex items-center justify-center flex-shrink-0">
                       <svg
                         className="w-5 h-5 text-accent"
                         fill="none"
@@ -1757,27 +1758,45 @@ export default function Home() {
                   {/* Right Skills */}
                   <div className="md:col-span-8 p-6 md:p-8 flex items-center">
                     <div className="flex flex-wrap gap-2">
-                      <span className="tag">Business Transformation</span>
-                      <span className="tag">Digital Transformation</span>
-                      <span className="tag">
+                      <span className="tag rounded-none">
+                        Business Transformation
+                      </span>
+                      <span className="tag rounded-none">
+                        Digital Transformation
+                      </span>
+                      <span className="tag rounded-none">
                         Business Process Reengineering
                       </span>
-                      <span className="tag">Process Improvement</span>
-                      <span className="tag">Workflow Analysis</span>
-                      <span className="tag">Operating Model Design</span>
-                      <span className="tag">Governance & Controls</span>
-                      <span className="tag">Transformation PMO</span>
-                      <span className="tag">Executive Storylining</span>
+                      <span className="tag rounded-none">
+                        Process Improvement
+                      </span>
+                      <span className="tag rounded-none">
+                        Workflow Analysis
+                      </span>
+                      <span className="tag rounded-none">
+                        Operating Model Design
+                      </span>
+                      <span className="tag rounded-none">
+                        Governance & Controls
+                      </span>
+                      <span className="tag rounded-none">
+                        Transformation PMO
+                      </span>
+                      <span className="tag rounded-none">
+                        Executive Storylining
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Band 2: Process & Functional Tech */}
-              <div className="reveal stagger-2 bg-gray-50 border border-black/[0.04] rounded-lg overflow-hidden hover:border-black/10 transition-colors">
+              {/* Removed rounded-lg */}
+              <div className="reveal stagger-2 bg-gray-50 border border-black/[0.04] overflow-hidden hover:border-black/10 transition-colors">
                 <div className="grid md:grid-cols-12 min-h-[120px]">
                   <div className="md:col-span-4 p-6 md:p-8 md:border-r md:border-black/5 flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-white border border-black/[0.06] flex items-center justify-center flex-shrink-0">
+                    {/* Removed rounded-lg */}
+                    <div className="w-10 h-10 bg-white border border-black/[0.06] flex items-center justify-center flex-shrink-0">
                       <svg
                         className="w-5 h-5 text-gray-600"
                         fill="none"
@@ -1802,28 +1821,40 @@ export default function Home() {
 
                   <div className="md:col-span-8 p-6 md:p-8 flex items-center">
                     <div className="flex flex-wrap gap-2">
-                      <span className="tag">As-is/To-be Mapping</span>
-                      <span className="tag">APQC Framework</span>
-                      <span className="tag">Requirements Gathering</span>
-                      <span className="tag">
+                      <span className="tag rounded-none">
+                        As-is/To-be Mapping
+                      </span>
+                      <span className="tag rounded-none">APQC Framework</span>
+                      <span className="tag rounded-none">
+                        Requirements Gathering
+                      </span>
+                      <span className="tag rounded-none">
                         Requirements Traceability Matrix
                       </span>
-                      <span className="tag">Salesforce Sales Cloud</span>
-                      <span className="tag">Marketing Cloud</span>
-                      <span className="tag">Data Architecture</span>
-                      <span className="tag">Data Mapping</span>
-                      <span className="tag">Integration Analysis</span>
-                      <span className="tag">Data Analysis</span>
+                      <span className="tag rounded-none">
+                        Salesforce Sales Cloud
+                      </span>
+                      <span className="tag rounded-none">Marketing Cloud</span>
+                      <span className="tag rounded-none">
+                        Data Architecture
+                      </span>
+                      <span className="tag rounded-none">Data Mapping</span>
+                      <span className="tag rounded-none">
+                        Integration Analysis
+                      </span>
+                      <span className="tag rounded-none">Data Analysis</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Band 3: Tools & Languages */}
-              <div className="reveal stagger-3 bg-white border border-black/[0.06] rounded-lg overflow-hidden hover:border-black/10 transition-colors">
+              {/* Removed rounded-lg */}
+              <div className="reveal stagger-3 bg-white border border-black/[0.06] overflow-hidden hover:border-black/10 transition-colors">
                 <div className="grid md:grid-cols-12 min-h-[120px]">
                   <div className="md:col-span-4 p-6 md:p-8 md:border-r md:border-black/5 flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gray-100 border border-black/[0.04] flex items-center justify-center flex-shrink-0">
+                    {/* Removed rounded-lg */}
+                    <div className="w-10 h-10 bg-gray-100 border border-black/[0.04] flex items-center justify-center flex-shrink-0">
                       <svg
                         className="w-5 h-5 text-gray-600"
                         fill="none"
@@ -1850,26 +1881,23 @@ export default function Home() {
 
                   <div className="md:col-span-8 p-6 md:p-8 flex items-center">
                     <div className="flex flex-wrap gap-3">
-                      {/* Tools */}
                       <div className="flex flex-wrap gap-2">
-                        <span className="tag">PowerPoint</span>
-                        <span className="tag">Excel</span>
-                        <span className="tag">Word</span>
-                        <span className="tag">Visio</span>
-                        <span className="tag">Tableau</span>
-                        <span className="tag">SQL</span>
-                        <span className="tag">Python</span>
+                        <span className="tag rounded-none">PowerPoint</span>
+                        <span className="tag rounded-none">Excel</span>
+                        <span className="tag rounded-none">Word</span>
+                        <span className="tag rounded-none">Visio</span>
+                        <span className="tag rounded-none">Tableau</span>
+                        <span className="tag rounded-none">SQL</span>
+                        <span className="tag rounded-none">Python</span>
                       </div>
 
-                      {/* Divider */}
                       <div className="w-px h-6 bg-black/10 self-center"></div>
 
-                      {/* Languages */}
                       <div className="flex flex-wrap gap-2">
-                        <span className="tag bg-accent/[0.06] border-accent/15 text-accent">
+                        <span className="tag rounded-none bg-accent/[0.06] border-accent/15 text-accent">
                           Indonesian (Native)
                         </span>
-                        <span className="tag bg-accent/[0.06] border-accent/15 text-accent">
+                        <span className="tag rounded-none bg-accent/[0.06] border-accent/15 text-accent">
                           English (Fluent)
                         </span>
                       </div>
