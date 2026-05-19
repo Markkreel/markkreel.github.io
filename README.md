@@ -1,7 +1,4 @@
 # Mark Rumahorbo — Portfolio Website
-
-![Preview](public/preview.png)
-
 ## 🚀 Live Demo
 >
 > [markkreel.github.io](https://markkreel.github.io)
