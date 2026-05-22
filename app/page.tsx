@@ -92,6 +92,9 @@ export default function Home() {
   const tagStyle =
     "inline-flex items-center px-2.5 sm:px-3 py-1 text-[10px] sm:text-[11px] font-medium tracking-wider uppercase border border-gray-200 text-gray-600 bg-white hover:bg-[#930507] hover:text-white hover:border-[#930507] transition-all duration-200 cursor-default select-none rounded-none";
 
+  const tagStyle2 =
+    "inline-flex items-center px-2.5 sm:px-3 py-1 text-[10px] sm:text-[11px] font-medium tracking-wider uppercase border border-zinc-800 text-gray-200 bg-zinc-950 hover:bg-[#930507] hover:text-white hover:border-[#930507] transition-all duration-200 cursor-default select-none rounded-none";
+
   // Shared className style for active cards hover transitions (Fluid spacing on mobile)
   const cardHoverStyle =
     "bg-white border border-black p-6 md:p-8 rounded-none shadow-none hover:border-[#930507] hover:shadow-[6px_6px_0px_0px_rgba(147,5,7,1)] hover:-translate-y-0.5 transition-all duration-300";
@@ -262,7 +265,7 @@ export default function Home() {
                 </h1>
                 <div className="h-2 bg-[#930507] w-24 mb-8"></div>
                 <p className="text-xl md:text-2xl font-light text-gray-700 leading-relaxed max-w-xl">
-                  Aspiring digital strategy and transformation expert. Bridging
+                  Digital strategy and transformation analyst. Bridging
                   technical architecture with executive decision-making.
                   Supporting
                   <span className="text-black font-semibold">
@@ -289,7 +292,7 @@ export default function Home() {
                     Status
                   </p>
                   <p className="text-lg font-bold text-[#930507] uppercase tracking-tight">
-                    Exploring Full-Time Advisory Roles
+                    Exploring Full-Time Roles
                   </p>
                 </div>
 
@@ -437,7 +440,7 @@ export default function Home() {
               </h2>
               <p className="text-gray-600 mt-4 max-w-xl text-xs">
                 ARCHIVE OF ENGAGEMENTS AT PRICEWATERHOUSECOOPERS (PwC) SEA
-                CONSULTING AND PRIVATE ENTERPRISES.
+                CONSULTING <br /> AND PRIVATE ENTERPRISES.
               </p>
             </div>
 
@@ -475,7 +478,7 @@ export default function Home() {
                     </h3>
                   </div>
                   <div className="mt-4 md:mt-0 text-xs text-right text-gray-500">
-                    <div>FEB 2025 – MAY 2026</div>
+                    <div>FEB 2026 – MAY 2026</div>
                     <div className="font-bold text-black mt-1">
                       Client: Major SE Asian Banking Group
                     </div>
@@ -661,7 +664,7 @@ export default function Home() {
                     </h4>
                     <p className="text-sm text-gray-700 leading-relaxed font-medium">
                       Redesigned 130+ distinct to-be process maps. Proposed 30+
-                      functional redesign blueprints and defined 100+ KPIs to
+                      functional redesign blueprints and defined 100+ KPMs to
                       benchmark Shared Service Center (SSC) capabilities.
                       Presented results directly to PwC Partners and Client VPs.
                     </p>
@@ -672,7 +675,7 @@ export default function Home() {
                   <span className={tagStyle}>APQC Framework</span>
                   <span className={tagStyle}>To-be Process Optimization</span>
                   <span className={tagStyle}>Shared Service Feasibility</span>
-                  <span className={tagStyle}>KPI Architecture</span>
+                  <span className={tagStyle}>KPM Architecture</span>
                 </div>
               </div>
 
@@ -823,9 +826,11 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-                      <span className={tagStyle}>Bid Management</span>
-                      <span className={tagStyle}>Resource Budget Modeling</span>
-                      <span className={tagStyle}>Government RFPs</span>
+                      <span className={tagStyle2}>Bid Management</span>
+                      <span className={tagStyle2}>
+                        Resource Budget Modeling
+                      </span>
+                      <span className={tagStyle2}>Government RFPs</span>
                     </div>
                   </div>
                 </div>
@@ -977,6 +982,11 @@ export default function Home() {
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">
                     Specialized in system analysis, structured databases, and
                     computational analytics.
+                    <span className="block w-full h-[1px] bg-[#930507] my-2"></span>
+                    <span className="block mt-2 text-xs text-gray-500 font-mono tracking-tight">
+                      Thesis: Binary Static Analysis via Instruction/Operand
+                      Extraction & AHC.
+                    </span>
                   </p>
                   <p className="text-xs uppercase tracking-wide text-gray-500 font-bold mb-4">
                     GPA: 3.59/4.00 (Cum Laude)
@@ -1255,7 +1265,7 @@ export default function Home() {
                     Functional Strategy
                   </h3>
                   <p className="text-xs text-gray-400 mt-1 uppercase">
-                    10 Functional Frameworks
+                    10 Functional Skills
                   </p>
                 </div>
                 <div className="md:col-span-8 flex flex-wrap gap-2">
@@ -1268,6 +1278,7 @@ export default function Home() {
                   <span className={tagStyle}>Data Integration Mapping</span>
                   <span className={tagStyle}>Interface Topologies</span>
                   <span className={tagStyle}>Business Intelligence</span>
+                  <span className={tagStyle}>Benchmarking</span>
                 </div>
               </div>
 
@@ -1275,7 +1286,7 @@ export default function Home() {
               <div className="grid md:grid-cols-12 py-8 items-center">
                 <div className="md:col-span-4 mb-4 md:mb-0">
                   <h3 className="text-xl font-black uppercase tracking-tight">
-                    Tools & Dialects
+                    Tools & Languages
                   </h3>
                   <p className="text-xs text-gray-400 mt-1 uppercase">
                     Technologies & Communication
@@ -1288,8 +1299,12 @@ export default function Home() {
                     <span className={tagStyle}>Visio</span>
                     <span className={tagStyle}>Tableau</span>
                     <span className={tagStyle}>React</span>
-                    <span className={tagStyle}>SQL</span>
+                    <span className={tagStyle}>Web Development</span>
                     <span className={tagStyle}>Python</span>
+                    <span className={tagStyle}>C++</span>
+                    <span className={tagStyle}>SQL</span>
+                    <span className={tagStyle}>Machine Learning</span>
+                    <span className={tagStyle}>Data Analytics</span>
                   </div>
                   <div className="w-px h-6 bg-black/20 hidden md:block"></div>
                   <div className="flex flex-wrap gap-2">
@@ -1402,7 +1417,7 @@ export default function Home() {
                         Professional Link
                       </p>
                       <p className="text-sm font-bold text-black mt-0.5 truncate group-hover:text-black transition-colors">
-                        mark-rumahorbo
+                        Mark Rumahorbo
                       </p>
                     </div>
                   </a>
