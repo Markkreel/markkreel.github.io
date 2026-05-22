@@ -1,22 +1,21 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        accent: '#930507',
-        'accent-light': '#B81012',
+        accent: "#930507",
+        "accent-light": "#B81012",
       },
       fontFamily: {
-        'swiss': ['Geist', 'system-ui', 'sans-serif'],
+        swiss: ["Geist", "system-ui", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
       },
       letterSpacing: {
-        'ultra-tight': '-0.05em',
-        'tighter': '-0.025em',
-      }
+        "ultra-tight": "-0.05em",
+        tighter: "-0.025em",
+      },
     },
   },
   plugins: [],

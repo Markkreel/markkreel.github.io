@@ -11,6 +11,9 @@
 /* -----------------------------------
    BASE STYLES
    ----------------------------------- */
+@theme {
+  --font-mono: var(--font-geist-mono);
+}
 
 * {
   /* UPDATED: Changed 'Geist' to 'Inter' for web-safe default. 
