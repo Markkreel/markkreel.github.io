@@ -1,6 +1,6 @@
 // ─── Next.js ─────────────────────────────────────────────────────────────────
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google"; // Added Geist_Mono
 import localFont from "next/font/local";
 
 // ─── Assets ──────────────────────────────────────────────────────────────────
@@ -14,30 +14,36 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
+// Added Geist Mono configuration
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
+
 const helvetica = localFont({
   src: [
     {
-      path: "../app/fonts/HelveticaNeueLTPro-Roman.ttf",
+      path: "./fonts/HelveticaNeueLTPro-Roman.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../app/fonts/HelveticaNeueLTPro-It.ttf",
+      path: "./fonts/HelveticaNeueLTPro-It.ttf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "../app/fonts/HelveticaNeueLTPro-Bd.ttf",
+      path: "./fonts/HelveticaNeueLTPro-Bd.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../app/fonts/HelveticaNeueLTPro-BdIt.ttf",
+      path: "./fonts/HelveticaNeueLTPro-BdIt.ttf",
       weight: "700",
       style: "italic",
     },
     {
-      path: "../app/fonts/HelveticaNeueLTPro-Lt.ttf",
+      path: "./fonts/HelveticaNeueLTPro-Lt.ttf",
       weight: "300",
       style: "normal",
     },
@@ -48,11 +54,10 @@ const helvetica = localFont({
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL("https://markkreel.github.io"),
-  title: "Mark Rumahorbo | Digital Transformation Consultant",
+  title: "Mark Rumahorbo | Strategy & Operations Consultant",
   description:
-    "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
+    "Digital transformation and business process analyst with a Computer Science foundation and consulting experience at PwC South East Asia.",
 
-  // 1. EXPANDED KEYWORDS
   keywords: [
     "Mark Rumahorbo",
     "digital transformation consultant Jakarta",
@@ -64,10 +69,14 @@ export const metadata: Metadata = {
     "APQC process mapping",
     "financial services consultant",
     "computer science to consulting",
+    "OJK regulations PIKK",
+    "Requirements Traceability Matrix (RTM)",
+    "RACI matrix design",
+    "Universitas Gadjah Mada CS",
+    "DAAD Scholar",
   ],
   authors: [{ name: "Mark Rumahorbo" }],
 
-  // 2. ADD CANONICAL URL (Prevents Google from getting confused by duplicate links)
   alternates: {
     canonical: "https://markkreel.github.io",
   },
@@ -77,7 +86,10 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
   },
 
   openGraph: {
@@ -104,26 +116,52 @@ export const metadata: Metadata = {
       "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
     images: ["/img/og-image.png"],
   },
+};
 
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Mark Rumahorbo",
-      jobTitle: "Digital Transformation Consultant",
-      url: "https://markkreel.github.io",
-      sameAs: [
-        "https://linkedin.com/in/mark-rumahorbo",
-        "https://github.com/Markkreel",
-      ],
-      worksFor: {
-        "@type": "Organization",
-        name: "PwC South East Asia Consulting",
-      },
-      description:
-        "Digital transformation and business process analyst delivering strategic solutions for banks and insurers across Southeast Asia.",
-    }),
+// ─── Schema.org Structured Data ──────────────────────────────────────────────
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Mark Rumahorbo",
+  gender: "Male",
+  nationality: {
+    "@type": "Country",
+    name: "Indonesia",
   },
+  jobTitle: "Digital Transformation & Business Process Analyst",
+  url: "https://markkreel.github.io",
+  image: "https://markkreel.github.io/img/og-image.png",
+  sameAs: [
+    "https://linkedin.com/in/mark-rumahorbo",
+    "https://github.com/Markkreel",
+  ],
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "Universitas Gadjah Mada",
+      url: "https://www.ugm.ac.id",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Universität Leipzig",
+    },
+  ],
+  knowsAbout: [
+    "Digital Transformation",
+    "Target Operating Model (TOM)",
+    "Business Process Reengineering (BPR)",
+    "Salesforce CRM",
+    "APQC Framework",
+    "Requirements Traceability Matrix (RTM)",
+    "Financial Services Consulting",
+    "OJK PIKK Regulatory Governance",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "PwC South East Asia Consulting",
+  },
+  description:
+    "Digital transformation and business process analyst with a Computer Science foundation and consulting experience at PwC South East Asia.",
 };
 
 // ─── Root Layout ──────────────────────────────────────────────────────────────
@@ -133,8 +171,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geist.className} scroll-smooth`}>
-      <body className={`${geist.className} bg-white text-black`}>
+    <html
+      lang="en"
+      className={`${geist.variable} ${geistMono.variable} ${helvetica.variable} scroll-smooth`}
+    >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className={`${geist.className} bg-white text-black antialiased`}>
         <ClientLayout>{children}</ClientLayout>
         <BackToTop />
       </body>
